@@ -3,49 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Snowflake to Outlook to Power Query email alert automation case study by Clint Aguilar.">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Email Alert Automation | Clint Aguilar</title>
+  <meta name="description" content="Report Distribution Automation portfolio case study by Clint Aguilar.">
+  <title>Report Distribution Automation | Clint Aguilar</title>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    .project-shell { width:min(92%,1120px); margin:0 auto; }
+    .project-hero { padding:5rem 0 2.5rem; }
+    .project-hero h1 { max-width:850px; margin:.4rem 0 .8rem; font-size:clamp(2.4rem,5vw,4rem); line-height:1.05; }
+    .project-hero .lead { max-width:760px; }
+    .flow-card { margin:1rem 0 3rem; padding:1.5rem; border:1px solid var(--line); border-radius:1rem; background:var(--panel); }
+    .architecture { margin:1.5rem 0 4rem; }
+    .architecture img { display:block; width:100%; height:auto; border-radius:1rem; border:1px solid var(--line); }
+  </style>
 </head>
 <body>
-  <header class="site-header"><a class="brand" href="../index.html">Clint Aguilar</a><nav><a href="../index.html#projects">Portfolio</a><a href="https://www.linkedin.com/in/clint-aguilar/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" target="_blank" rel="noopener noreferrer">Hire Me on Upwork</a></nav></header>
-  <main class="container">
-    <section class="hero compact-hero">
-      <p class="eyebrow">Automation Case Study · Synthetic Workflow</p>
-      <h1>Snowflake Email Alert & Report Distribution Automation</h1>
-      <p class="lead">A reusable automation pattern for detecting business conditions in a Snowflake data warehouse, generating report-ready outputs, distributing alerts through Outlook, and feeding downstream Power Query workflows.</p>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Clint Aguilar</a>
+    <nav>
+      <a href="../index.html#projects">Back to Portfolio</a>
+      <a href="https://www.linkedin.com/in/clint-aguilar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" target="_blank" rel="noopener noreferrer">Hire Me on Upwork</a>
+    </nav>
+  </header>
+
+  <main class="project-shell">
+    <section class="project-hero">
+      <p class="eyebrow">Snowflake · SQL · Outlook · Power Query · Automation</p>
+      <h1>Report Distribution Automation</h1>
+      <p class="lead">An automated reporting workflow designed to identify data conditions, prepare report-ready outputs, and distribute them to stakeholders with minimal manual effort.</p>
     </section>
 
-    <section class="section">
-      <div class="section-heading"><p class="eyebrow">Architecture</p><h2>End-to-End Flow</h2></div>
-      <div class="card"><p><strong>Snowflake Data Warehouse</strong> → SQL detection / scheduled query → alert dataset or CSV output → <strong>Outlook email</strong> → <strong>Power Query ingestion / transformation</strong> → curated report output → <strong>distributed Outlook recipients</strong>.</p></div>
+    <section class="flow-card">
+      <h2>Workflow</h2>
+      <p>Snowflake data warehouse → SQL detection and report preparation → Outlook delivery → Power Query transformation → final Outlook distribution.</p>
     </section>
 
-    <section class="section">
-      <div class="grid two">
-        <article class="card"><h3>1. Condition Detection</h3><p>SQL identifies records that require action, such as new unmapped entities, data-quality failures, missing operational records, threshold breaches, or newly available reporting data.</p></article>
-        <article class="card"><h3>2. Snowflake Output</h3><p>The result is shaped into a recipient-friendly dataset with only the fields required for review. Automation logic can prevent empty notifications and duplicate alerts.</p></article>
-        <article class="card"><h3>3. Outlook Delivery</h3><p>The generated report or structured email is sent to a controlled mailbox or recipient list. Distribution is separated from data-processing logic so recipients can change without rewriting core SQL.</p></article>
-        <article class="card"><h3>4. Power Query Processing</h3><p>Power Query extracts and standardizes the delivered data, applies transformations, and prepares a clean table or workbook for downstream business users.</p></article>
-        <article class="card"><h3>5. Final Distribution</h3><p>The transformed output is attached or embedded in a consolidated Outlook email and distributed to the appropriate stakeholders on a scheduled or condition-driven basis.</p></article>
-        <article class="card"><h3>6. Operational Controls</h3><p>Validation includes record counts, timestamp checks, duplicate prevention, failure handling, controlled recipient lists, and separation of production secrets from source code.</p></article>
-      </div>
+    <section class="architecture">
+      <img src="../assets/report-distribution-architecture.jpg" alt="Architecture diagram for the Report Distribution Automation project">
     </section>
-
-    <section class="section">
-      <div class="section-heading"><p class="eyebrow">What this demonstrates</p><h2>Client Value</h2></div>
-      <div class="grid two">
-        <article class="card"><h3>SQL & Snowflake</h3><p>Condition-based querying, data shaping, scheduling concepts, reusable views, and report-ready warehouse outputs.</p></article>
-        <article class="card"><h3>Automation</h3><p>Eliminates recurring manual checking, copying, file preparation, and repetitive report distribution tasks.</p></article>
-        <article class="card"><h3>Power Query</h3><p>Transforms structured email/file outputs into clean datasets for Excel or downstream BI consumption.</p></article>
-        <article class="card"><h3>Security</h3><p>No passwords, access tokens, mailbox secrets, production addresses, or proprietary warehouse objects are stored in the public portfolio repository.</p></article>
-      </div>
-    </section>
-
-    <section class="section"><div class="card"><strong>Portfolio privacy:</strong> This case study describes a generalized automation architecture. Any production implementation details, recipient addresses, credentials, company identifiers, and proprietary SQL remain private.</div></section>
-    <section class="section"><div class="actions"><a class="button primary" href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" target="_blank" rel="noopener noreferrer">Hire Me for an Automation Project</a><a class="button" href="https://www.linkedin.com/in/clint-aguilar/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a><a class="button" href="../index.html#projects">← Back to portfolio</a></div></section>
   </main>
-  <footer class="container footer"><p>© 2026 Clint Aguilar · Synthetic automation demonstration.</p></footer>
 </body>
 </html>
