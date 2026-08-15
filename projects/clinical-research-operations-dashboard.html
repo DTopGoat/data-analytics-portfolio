@@ -17,7 +17,8 @@
       <a href="../index.html#projects">Portfolio</a>
       <a href="#dashboard">Dashboard</a>
       <a href="#case-study">Case Study</a>
-      <a href="https://github.com/DTopGoat/data-analytics-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/clint-aguilar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="../index.html#contact">Hire Me</a>
     </nav>
   </header>
 
@@ -35,38 +36,13 @@
           <p class="dashboard-kicker">NORTHSTAR CLINICAL RESEARCH · DEMO ENVIRONMENT</p>
           <h2>Study Operations Overview</h2>
         </div>
-        <div class="dashboard-actions">
-          <span class="freshness">Synthetic snapshot · Aug 2026</span>
-        </div>
+        <div class="dashboard-actions"><span class="freshness">Synthetic snapshot · Aug 2026</span></div>
       </div>
 
       <div class="filter-strip" aria-label="Dashboard filters">
-        <label>Study
-          <select id="studyFilter">
-            <option value="all">All Active Studies</option>
-            <option value="Metabolic-101">Metabolic-101</option>
-            <option value="Cardio-204">Cardio-204</option>
-            <option value="Liver-315">Liver-315</option>
-          </select>
-        </label>
-        <label>Site
-          <select id="siteFilter">
-            <option value="all">All Sites</option>
-            <option value="Aurora">Aurora Research</option>
-            <option value="Cedar">Cedar Research</option>
-            <option value="Harbor">Harbor Research</option>
-            <option value="Mesa">Mesa Research</option>
-            <option value="Summit">Summit Research</option>
-          </select>
-        </label>
-        <label>Subject Status
-          <select id="statusFilter">
-            <option value="all">All Statuses</option>
-            <option value="Screening">Screening</option>
-            <option value="Enrolled">Enrolled</option>
-            <option value="Completed">Completed</option>
-          </select>
-        </label>
+        <label>Study<select id="studyFilter"><option value="all">All Active Studies</option><option value="Metabolic-101">Metabolic-101</option><option value="Cardio-204">Cardio-204</option><option value="Liver-315">Liver-315</option></select></label>
+        <label>Site<select id="siteFilter"><option value="all">All Sites</option><option value="Aurora">Aurora Research</option><option value="Cedar">Cedar Research</option><option value="Harbor">Harbor Research</option><option value="Mesa">Mesa Research</option><option value="Summit">Summit Research</option></select></label>
+        <label>Subject Status<select id="statusFilter"><option value="all">All Statuses</option><option value="Screening">Screening</option><option value="Enrolled">Enrolled</option><option value="Completed">Completed</option></select></label>
         <button id="resetFilters" type="button">Reset filters</button>
       </div>
 
@@ -79,57 +55,17 @@
       </div>
 
       <div class="dashboard-grid">
-        <article class="dash-panel wide-panel">
-          <div class="panel-heading"><div><span class="panel-label">Recruitment</span><h3>Monthly Screening & Enrollment</h3></div><span class="panel-meta">Last 8 months</span></div>
-          <div class="combo-chart" aria-label="Monthly screening and enrollment synthetic chart">
-            <div class="chart-ylabels"><span>120</span><span>90</span><span>60</span><span>30</span><span>0</span></div>
-            <div class="bars" id="recruitmentBars"></div>
-          </div>
-          <div class="legend"><span><i class="legend-screened"></i>Screened</span><span><i class="legend-enrolled"></i>Enrolled</span></div>
-        </article>
-
-        <article class="dash-panel">
-          <div class="panel-heading"><div><span class="panel-label">Quality</span><h3>Protocol Deviation Mix</h3></div></div>
-          <div class="donut-wrap">
-            <div class="donut" id="deviationDonut" role="img" aria-label="Protocol deviation distribution"></div>
-            <div class="donut-center"><strong id="deviationTotal">96</strong><span>deviations</span></div>
-          </div>
-          <div class="donut-legend" id="deviationLegend"></div>
-        </article>
-
-        <article class="dash-panel">
-          <div class="panel-heading"><div><span class="panel-label">Sites</span><h3>Enrollment vs Target</h3></div></div>
-          <div id="sitePerformance" class="site-performance"></div>
-        </article>
-
-        <article class="dash-panel wide-panel">
-          <div class="panel-heading"><div><span class="panel-label">Operations</span><h3>Site Performance Scorecard</h3></div><span class="panel-meta">Synthetic operational metrics</span></div>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Site</th><th>Active Subjects</th><th>Enrollment</th><th>Visit Completion</th><th>Deviation Rate</th><th>Data Complete</th></tr></thead>
-              <tbody id="siteTable"></tbody>
-            </table>
-          </div>
-        </article>
-
-        <article class="dash-panel">
-          <div class="panel-heading"><div><span class="panel-label">Data Quality</span><h3>Open Data Exceptions</h3></div></div>
-          <div class="exception-list" id="exceptionList"></div>
-        </article>
-
-        <article class="dash-panel">
-          <div class="panel-heading"><div><span class="panel-label">Executive Insight</span><h3>What Needs Attention</h3></div></div>
-          <ul class="insight-list" id="insightList"></ul>
-        </article>
+        <article class="dash-panel wide-panel"><div class="panel-heading"><div><span class="panel-label">Recruitment</span><h3>Monthly Screening & Enrollment</h3></div><span class="panel-meta">Last 8 months</span></div><div class="combo-chart" aria-label="Monthly screening and enrollment synthetic chart"><div class="chart-ylabels"><span>120</span><span>90</span><span>60</span><span>30</span><span>0</span></div><div class="bars" id="recruitmentBars"></div></div><div class="legend"><span><i class="legend-screened"></i>Screened</span><span><i class="legend-enrolled"></i>Enrolled</span></div></article>
+        <article class="dash-panel"><div class="panel-heading"><div><span class="panel-label">Quality</span><h3>Protocol Deviation Mix</h3></div></div><div class="donut-wrap"><div class="donut" id="deviationDonut" role="img" aria-label="Protocol deviation distribution"></div><div class="donut-center"><strong id="deviationTotal">96</strong><span>deviations</span></div></div><div class="donut-legend" id="deviationLegend"></div></article>
+        <article class="dash-panel"><div class="panel-heading"><div><span class="panel-label">Sites</span><h3>Enrollment vs Target</h3></div></div><div id="sitePerformance" class="site-performance"></div></article>
+        <article class="dash-panel wide-panel"><div class="panel-heading"><div><span class="panel-label">Operations</span><h3>Site Performance Scorecard</h3></div><span class="panel-meta">Synthetic operational metrics</span></div><div class="table-wrap"><table><thead><tr><th>Site</th><th>Active Subjects</th><th>Enrollment</th><th>Visit Completion</th><th>Deviation Rate</th><th>Data Complete</th></tr></thead><tbody id="siteTable"></tbody></table></div></article>
+        <article class="dash-panel"><div class="panel-heading"><div><span class="panel-label">Data Quality</span><h3>Open Data Exceptions</h3></div></div><div class="exception-list" id="exceptionList"></div></article>
+        <article class="dash-panel"><div class="panel-heading"><div><span class="panel-label">Executive Insight</span><h3>What Needs Attention</h3></div></div><ul class="insight-list" id="insightList"></ul></article>
       </div>
     </section>
 
     <section id="case-study" class="section container">
-      <div class="section-heading">
-        <p class="eyebrow">How it was designed</p>
-        <h2>Case Study</h2>
-        <p>This simulation is designed to show how I approach a real clinical research BI engagement without publishing confidential operational data.</p>
-      </div>
+      <div class="section-heading"><p class="eyebrow">How it was designed</p><h2>Case Study</h2><p>This simulation shows how I approach a clinical research BI engagement without publishing confidential operational data.</p></div>
       <div class="grid two">
         <article class="card"><h3>Business Questions</h3><p>How is recruitment pacing? Which sites are below enrollment target? Are scheduled visits being completed? Where are protocol deviations concentrated? Which data-quality exceptions require operational follow-up?</p></article>
         <article class="card"><h3>Analytics Layer</h3><p>Subject-level status logic, visit completion measures, deviation counts and rates, site scorecards, missing-answer monitoring, and reconciliation checks designed as reusable SQL metrics.</p></article>
@@ -138,7 +74,7 @@
       </div>
     </section>
 
-    <section class="section container"><a class="button primary" href="../index.html#projects">← Back to portfolio</a></section>
+    <section class="section container"><div class="actions"><a class="button primary" href="../index.html#contact">Discuss a Similar Project</a><a class="button" href="../index.html#projects">← Back to portfolio</a></div></section>
   </main>
 
   <footer class="container footer"><p>© 2026 Clint Aguilar · Synthetic clinical analytics demonstration.</p></footer>
