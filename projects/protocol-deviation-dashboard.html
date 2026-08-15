@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Synthetic protocol deviation dashboard simulation by Clint Aguilar.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Protocol Deviation Log Dashboard | Clint Aguilar</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{background:#f7f8fa;color:#202124}.site-header{background:#fff;border-color:#e4e7eb}.site-header a,.brand{color:#202124}.looker{width:min(96%,1700px);margin:1rem auto 3rem;background:#fff;border:1px solid #e2e6ea;box-shadow:0 8px 30px rgba(20,30,50,.08)}.looker-head{padding:1rem 1.2rem .4rem}.looker-head h1{font-size:1.45rem;margin:.1rem 0}.tabs{display:flex;gap:1.4rem;border-bottom:1px solid #dfe3e8;padding:0 1.2rem;overflow:auto}.tabs span{padding:.65rem 0;font-size:.78rem;white-space:nowrap}.tabs .active{border-bottom:2px solid #1a73e8;color:#1a73e8}.filters{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:.7rem;padding:1rem 1.2rem}.filters label{font-size:.7rem;color:#5f6368}.filters select{width:100%;margin-top:.3rem;padding:.55rem;border:1px solid #c7ccd1;border-radius:3px;background:#fff}.note{padding:0 1.2rem .8rem;font-size:.72rem;color:#5f6368}.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;padding:0 1.2rem 1rem}.metric{border:1px solid #e2e6ea;background:#fff;padding:.9rem;text-align:center;min-height:82px}.metric span{display:block;font-size:.7rem;color:#5f6368}.metric strong{display:block;font-size:1.5rem;margin-top:.3rem}.main-grid{display:grid;grid-template-columns:37% 63%;gap:.7rem;padding:0 1.2rem .7rem}.panel{border:1px solid #e2e6ea;background:#fff;padding:.8rem}.panel h3{font-size:.82rem;text-align:center;margin:.1rem 0 .7rem}.legend-note{font-size:.68rem;line-height:1.5}.pie{width:220px;height:220px;border-radius:50%;margin:1rem auto;background:conic-gradient(#69d05f 0 46%,#3fa7ca 46% 88%,#7a4cc2 88% 97%,#d94b59 97% 100%);position:relative}.pie:after{content:"";position:absolute;inset:58px;background:#fff;border-radius:50%}.pie-label{text-align:center;font-size:.7rem;color:#5f6368}.stacked{display:grid;gap:.8rem}.tbl{width:100%;border-collapse:collapse;font-size:.68rem}.tbl th,.tbl td{border-bottom:1px solid #eceff1;padding:.42rem;text-align:left}.bar{height:16px;background:#4285f4}.heat{background:linear-gradient(90deg,#ffddd8,#ef6c63);padding:.25rem .4rem}.lower{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;padding:0 1.2rem .7rem}.lower .tbl td:nth-child(2){width:40%}.mini-bar{height:14px;background:#6f42c1}.detail{margin:0 1.2rem 1.2rem}.privacy{margin:1rem 1.2rem;padding:.7rem;border-left:3px solid #1a73e8;background:#f1f6ff;font-size:.72rem}.back{width:min(96%,1700px);margin:0 auto 3rem}.muted{color:#5f6368}@media(max-width:900px){.filters,.kpis,.main-grid,.lower{grid-template-columns:1fr 1fr}.main-grid{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.filters,.kpis,.lower{grid-template-columns:1fr}.pie{width:170px;height:170px}.pie:after{inset:45px}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="../index.html">Clint Aguilar</a><nav><a href="../index.html#projects">Portfolio</a><a href="https://github.com/DTopGoat/data-analytics-portfolio" target="_blank" rel="noopener noreferrer">GitHub</a></nav></header>
+
+  <main>
+    <section class="looker" aria-label="Synthetic Looker-style protocol deviation dashboard">
+      <div class="looker-head"><div class="muted" style="font-size:.68rem">Source</div><h1>Protocol Deviation Log Dashboard — Demo</h1></div>
+      <div class="tabs"><span class="active">General Overview</span><span>Reportable Protocol Deviations</span><span>Unanswered Protocol Deviation Questions</span><span>Uncategorized Answers</span><span>Deviation Discovery and Duration</span></div>
+      <div class="filters">
+        <label>Organization<select><option>Northstar Clinical Network</option></select></label>
+        <label>Site Name<select><option>All Synthetic Sites</option><option>Aurora Clinical Research</option><option>Cedar Clinical Research</option></select></label>
+        <label>Study Name<select><option>All Active Demo Studies</option></select></label>
+        <label>Study Status<select><option>Enrolling / Startup / Maintenance</option></select></label>
+      </div>
+      <div class="note">Note: All names, studies, counts and metrics below are synthetic and created solely for this public portfolio demonstration.</div>
+      <div class="kpis">
+        <div class="metric"><span>Average Deviations Per Subject</span><strong>1.28</strong></div>
+        <div class="metric"><span>Protocol Deviations Total</span><strong>362</strong></div>
+        <div class="metric"><span>Subjects with Protocol Deviations</span><strong>279</strong></div>
+        <div class="metric"><span>Total Subjects</span><strong>2,418</strong></div>
+        <div class="metric"><span>Subject Protocol Deviation Rate</span><strong>11.54%</strong></div>
+      </div>
+
+      <div class="main-grid">
+        <div class="panel">
+          <h3>Reportable Deviation Breakdown</h3>
+          <div class="legend-note"><b>MAJOR</b>: Synthetic example of a reportable deviation category.<br><b>MINOR</b>: Synthetic example of a lower-severity deviation category.<br><b>[NOT DONE]</b>: Required response not completed.<br><b>Empty</b>: Null or blank answer.</div>
+          <div class="pie"></div>
+          <div class="pie-label">MINOR 46% · Empty 42% · [NOT DONE] 9% · MAJOR 3%</div>
+        </div>
+        <div class="stacked">
+          <div class="panel"><h3>Subject Protocol Deviation per Site</h3><table class="tbl"><thead><tr><th>Site Name</th><th>Total Subjects</th><th>Subjects with Deviations</th><th>Deviation Rate</th></tr></thead><tbody><tr><td>Aurora Clinical Research</td><td>184</td><td><div class="bar" style="width:72%"></div></td><td><span class="heat">18.48%</span></td></tr><tr><td>Cedar Clinical Research</td><td>221</td><td><div class="bar" style="width:58%"></div></td><td><span class="heat">14.93%</span></td></tr><tr><td>Harbor Clinical Research</td><td>398</td><td><div class="bar" style="width:44%"></div></td><td><span class="heat">10.55%</span></td></tr><tr><td>Mesa Clinical Research</td><td>517</td><td><div class="bar" style="width:33%"></div></td><td><span class="heat">8.70%</span></td></tr></tbody></table></div>
+          <div class="panel"><h3>Subject Protocol Deviation per Study</h3><table class="tbl"><thead><tr><th>Study</th><th>Total Subjects</th><th>Subjects with Deviations</th><th>Deviation Rate</th></tr></thead><tbody><tr><td>Metabolic-101</td><td>18</td><td>8</td><td><span class="heat">44.44%</span></td></tr><tr><td>Cardio-204</td><td>23</td><td>7</td><td><span class="heat">30.43%</span></td></tr><tr><td>Liver-315</td><td>29</td><td>6</td><td><span class="heat">20.69%</span></td></tr><tr><td>Respiratory-220</td><td>41</td><td>7</td><td><span class="heat">17.07%</span></td></tr></tbody></table></div>
+        </div>
+      </div>
+
+      <div class="lower">
+        <div class="panel"><h3>Type of Deviation</h3><table class="tbl"><tbody><tr><td>Visit Out-of-Window</td><td><div class="mini-bar" style="width:100%"></div></td><td>39%</td></tr><tr><td>Other: Specify in Description</td><td><div class="mini-bar" style="width:57%"></div></td><td>22%</td></tr><tr><td>Visit Missed</td><td><div class="mini-bar" style="width:24%"></div></td><td>9%</td></tr><tr><td>Study Procedure Not Done</td><td><div class="mini-bar" style="width:19%"></div></td><td>7%</td></tr><tr><td>IP Not Returned</td><td><div class="mini-bar" style="width:12%"></div></td><td>5%</td></tr></tbody></table></div>
+        <div class="panel"><h3>Reason for Deviation</h3><table class="tbl"><tbody><tr><td>Participant protocol non-compliance</td><td><div class="mini-bar" style="width:100%"></div></td><td>28%</td></tr><tr><td>Participant error</td><td><div class="mini-bar" style="width:82%"></div></td><td>23%</td></tr><tr><td>Site error</td><td><div class="mini-bar" style="width:75%"></div></td><td>21%</td></tr><tr><td>Other, specify</td><td><div class="mini-bar" style="width:23%"></div></td><td>6%</td></tr><tr><td>Medical justification</td><td><div class="mini-bar" style="width:11%"></div></td><td>3%</td></tr></tbody></table></div>
+      </div>
+
+      <div class="panel detail"><h3>Protocol Deviations List</h3><table class="tbl"><thead><tr><th>Subject ID</th><th>Site</th><th>Reportable Type</th><th>Deviation Type</th><th>Reason</th><th>Study</th><th>Status</th></tr></thead><tbody><tr><td>SUB-10021</td><td>Aurora</td><td>MINOR</td><td>Visit Out-of-Window</td><td>Participant error</td><td>Metabolic-101</td><td>Maintenance</td></tr><tr><td>SUB-10077</td><td>Cedar</td><td>MINOR</td><td>Study Procedure Not Done</td><td>Site error</td><td>Cardio-204</td><td>Enrolling</td></tr><tr><td>SUB-10135</td><td>Harbor</td><td>MAJOR</td><td>IP Dosing Error</td><td>Site error</td><td>Liver-315</td><td>Maintenance</td></tr></tbody></table></div>
+      <div class="privacy"><strong>Privacy boundary:</strong> This page is a synthetic recreation of dashboard design patterns. It does not reproduce real ACN subject IDs, site names, study names, counts, URLs, internal labels, or confidential business data.</div>
+    </section>
+    <div class="back"><a class="button primary" href="../index.html#projects">← Back to portfolio</a></div>
+  </main>
+</body>
+</html>
