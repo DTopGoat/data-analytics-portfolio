@@ -3,50 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Protocol Deviation Log Dashboard portfolio case study by Clint Aguilar.">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Protocol Deviation Log Dashboard | Clint Aguilar</title>
-  <link rel="stylesheet" href="../styles.css">
   <style>
-    body{background:#f4f7fb;color:#18212f}.site-header{background:#fff;border-color:#e4eaf2}.site-header a,.brand{color:#18212f}.case-shell{width:min(94%,1400px);margin:0 auto 4rem}.case-hero{padding:4.5rem 0 2rem}.case-hero .lead{max-width:900px;color:#566579}.dashboard-frame{background:#fff;border:1px solid #d9e1ec;border-radius:1rem;overflow:hidden;box-shadow:0 20px 45px rgba(17,27,45,.08)}.dashboard-frame img{width:100%;display:block;height:auto}.dashboard-caption{padding:1rem 1.25rem;font-size:.95rem;color:#566579;border-top:1px solid #e7edf5;background:#fbfcfe}.case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem}.case-grid .card{background:#fff;border-color:#d9e1ec}.privacy-card{margin-top:1rem;background:#eef5ff;border:1px solid #cfe0fb;border-radius:1rem;padding:1rem 1.25rem;color:#26415f}@media(max-width:780px){.case-grid{grid-template-columns:1fr}.case-hero{padding-top:3rem}}
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: #0b1220;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 4%;
+      background: #0b1220;
+      border-bottom: 1px solid #26334b;
+    }
+    .site-header a {
+      color: #a7b3c7;
+      text-decoration: none;
+    }
+    .brand {
+      color: #e8eef8 !important;
+      font-weight: 700;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .preview {
+      width: min(96vw, 1680px);
+      margin: 28px auto 48px;
+    }
+    .preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.32);
+    }
+    @media (max-width: 700px) {
+      .site-header { align-items: flex-start; flex-direction: column; }
+      .preview { width: 100%; margin-top: 0; }
+      .preview img { border-radius: 0; }
+    }
   </style>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="../index.html">Clint Aguilar</a>
-    <nav aria-label="Project navigation">
-      <a href="../index.html#projects">Portfolio</a>
+    <nav>
+      <a href="../index.html#projects">Back to Portfolio</a>
       <a href="https://www.linkedin.com/in/clint-aguilar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" target="_blank" rel="noopener noreferrer">Hire Me on Upwork</a>
     </nav>
   </header>
 
-  <main class="case-shell">
-    <section class="case-hero">
-      <p class="eyebrow">Clinical Research Analytics · Static Portfolio Preview</p>
-      <h1>Protocol Deviation Log Dashboard</h1>
-      <p class="lead">A static synthetic dashboard preview showing how I organize protocol deviation KPIs, site and study comparisons, deviation classifications, root-cause summaries, and subject-level detail for clinical research operations.</p>
-      <div class="actions">
-        <a class="button primary" href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" target="_blank" rel="noopener noreferrer">Hire Me for a Similar Dashboard</a>
-        <a class="button" href="https://www.linkedin.com/in/clint-aguilar/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
-      </div>
-    </section>
-
-    <section class="dashboard-frame" aria-label="Synthetic Protocol Deviation Log Dashboard preview">
-      <img src="data:image/jpeg;base64,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" alt="Static synthetic Protocol Deviation Log Dashboard preview with KPI cards, deviation breakdown, site and study comparisons, deviation types, reasons, and a detail table.">
-      <div class="dashboard-caption">Synthetic static preview based on the structure of a clinical analytics dashboard. All sites, studies, counts, and subject identifiers are fictional and created only for this portfolio.</div>
-    </section>
-
-    <section class="case-grid">
-      <article class="card"><h3>What this dashboard communicates</h3><p>Operational leaders can quickly see deviation volume, deviation rate, subjects affected, severity mix, high-risk sites and studies, and the most frequent deviation types and reasons.</p></article>
-      <article class="card"><h3>Skills demonstrated</h3><p>Clinical analytics design, KPI definition, SQL-backed reporting logic, dashboard layout planning, executive storytelling, and data-quality interpretation.</p></article>
-      <article class="card"><h3>Typical underlying data model</h3><p>Subject, study, site, visit, deviation event, reportability classification, deviation reason, and status attributes rolled into reusable operational metrics.</p></article>
-      <article class="card"><h3>Client value</h3><p>This type of dashboard reduces manual review, standardizes deviation reporting, and helps teams focus on operational hotspots that require follow-up.</p></article>
-    </section>
-
-    <div class="privacy-card"><strong>Privacy boundary:</strong> the preview uses synthetic values and fictional labels only. No employer data, patient information, confidential URLs, or proprietary business definitions are published.</div>
-
-    <section class="section"><div class="actions"><a class="button primary" href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" target="_blank" rel="noopener noreferrer">Start a Project on Upwork</a><a class="button" href="../index.html#projects">← Back to portfolio</a></div></section>
+  <main class="preview">
+    <img src="../assets/protocol-deviation-dashboard.jpg" alt="Synthetic Protocol Deviation Log Dashboard preview">
   </main>
 </body>
 </html>
