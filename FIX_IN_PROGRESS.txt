@@ -1,0 +1,1 @@
+Replacing truncated embedded carousel images with real binary assets.
