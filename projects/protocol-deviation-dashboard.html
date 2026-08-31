@@ -1,68 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Protocol Deviation Log Dashboard | Clint Aguilar</title>
-  <style>
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    body {
-      background: #0b1220;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    .site-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 4%;
-      background: #0b1220;
-      border-bottom: 1px solid #26334b;
-    }
-    .site-header a {
-      color: #a7b3c7;
-      text-decoration: none;
-    }
-    .brand {
-      color: #e8eef8 !important;
-      font-weight: 700;
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .preview {
-      width: min(96vw, 1680px);
-      margin: 28px auto 48px;
-    }
-    .preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 18px 50px rgba(0,0,0,.32);
-    }
-    @media (max-width: 700px) {
-      .site-header { align-items: flex-start; flex-direction: column; }
-      .preview { width: 100%; margin-top: 0; }
-      .preview img { border-radius: 0; }
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Protocol Deviation Dashboard portfolio case study by Clint Aguilar." name="description"/>
+<title>Protocol Deviation Dashboard | Clint Aguilar</title>
+<link href="../styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="../index.html">Clint Aguilar</a>
-    <nav>
-      <a href="../index.html#projects">Back to Portfolio</a>
-      <a href="https://www.linkedin.com/in/clint-aguilar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" target="_blank" rel="noopener noreferrer">Hire Me on Upwork</a>
-    </nav>
-  </header>
-
-  <main class="preview">
-    <img src="../assets/protocol-deviation-dashboard.jpg" alt="Synthetic Protocol Deviation Log Dashboard preview">
-  </main>
+<header class="site-header">
+<a class="brand" href="../index.html">Clint Aguilar</a>
+<nav><a href="../index.html#projects">Back to Projects</a><a href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer" target="_blank">LinkedIn</a></nav>
+</header>
+<main class="project-shell">
+<section class="project-hero">
+<p class="eyebrow">Looker · SQL · Clinical Operations Analytics · Data Quality</p>
+<h1>Protocol Deviation Dashboard</h1>
+<p class="lead">A clinical operations dashboard designed to give Regulatory Affairs, Quality, and operational leadership a clear view of protocol deviations, documentation gaps, site trends, and deviation timing.</p>
+<div class="project-meta"><span class="pill">Synthetic / anonymized visuals</span><span class="pill">No corporate or patient data</span></div>
+</section>
+<section class="project-summary">
+<article class="card">
+<h2>What the dashboard answers</h2>
+<ul><li>How many subjects have recorded protocol deviations?</li><li>Which deviation types and site-error reasons occur most often?</li><li>Where are protocol questions incomplete or unanswered?</li><li>How quickly are deviations identified and how long do they remain open?</li></ul>
+</article>
+<article class="card">
+<h2>My role</h2>
+<p>Requirements analysis, SQL/data preparation, KPI logic, dashboard design, data validation, and presentation to quality and regulatory leadership.</p>
+<h2>Technology</h2>
+<p>Looker, SQL, clinical operations analytics, data quality validation</p>
+</article>
+</section>
+<section class="carousel-wrap">
+<div class="section-heading"><p class="eyebrow">Dashboard walkthrough</p><h2>Five operational views</h2><p>The images below are the finalized synthetic versions of the dashboard views.</p></div>
+<div class="carousel" data-carousel="">
+<div class="carousel-track">
+<figure class="slide"><div class="slide-media"><div aria-label="Synthetic Protocol Deviation Dashboard general overview" class="sprite-frame sprite-wide sprite-wide-0" role="img"></div></div><figcaption><strong>1. General overview</strong>KPI summary with deviation determination, site-error comparisons, unanswered questions, site activity, and study-level deviation rates.</figcaption></figure>
+<figure class="slide"><div class="slide-media"><div aria-label="Synthetic complete protocol deviation list" class="sprite-frame sprite-wide sprite-wide-1" role="img"></div></div><figcaption><strong>2. Complete deviation list</strong>Detailed operational view of deviations, classifications, reasons, dates, sites, studies, status, and synthetic record links.</figcaption></figure>
+<figure class="slide"><div class="slide-media"><div aria-label="Synthetic site error protocol deviation analysis" class="sprite-frame sprite-wide sprite-wide-2" role="img"></div></div><figcaption><strong>3. Site error analysis</strong>Breakdown of site-related deviation reasons with distribution by site, study, and detailed exception records.</figcaption></figure>
+<figure class="slide"><div class="slide-media"><div aria-label="Synthetic unanswered protocol deviation questions analysis" class="sprite-frame sprite-wide sprite-wide-3" role="img"></div></div><figcaption><strong>4. Unanswered protocol questions</strong>Monitoring view for incomplete protocol-deviation questions, affected sites, and detailed records requiring follow-up.</figcaption></figure>
+<figure class="slide"><div class="slide-media"><div aria-label="Synthetic deviation discovery and duration analysis" class="sprite-frame sprite-wide sprite-wide-4" role="img"></div></div><figcaption><strong>5. Discovery &amp; duration</strong>Analysis of identification lag, deviation duration, missing dates, and record-level timing categories.</figcaption></figure>
+</div>
+<button aria-label="Previous slide" class="carousel-control prev" type="button">‹</button><button aria-label="Next slide" class="carousel-control next" type="button">›</button>
+</div>
+<div aria-label="Carousel navigation" class="carousel-dots"></div>
+</section>
+<section class="privacy-note">Every dashboard value, site, study, subject identifier, URL, and organization reference shown in this public portfolio is synthetic or anonymized. No corporate or patient data is included.</section>
+</main>
+<script src="../carousel.js"></script>
 </body>
 </html>
