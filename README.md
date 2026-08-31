@@ -1,22 +1,14 @@
-# Clint Aguilar — Data Analytics Portfolio
+# Clint Aguilar — Clinical Data Analytics Portfolio
 
-Client-facing portfolio focused on SQL development, business intelligence, analytics engineering, ETL/ELT automation, and AI-assisted analytics.
+Portfolio focused on clinical operations analytics, SQL, business intelligence, Snowflake, analytics engineering, and reporting automation.
 
-## Core expertise
-- SQL Development
-- Data Visualization
-- Data Analytics
-- ETL / ELT Development and Automation
-- AI Prompt Engineering
+## Featured projects
+1. Protocol Deviation Dashboard
+2. Patient Recruitment Analytics
+3. Study Mapping Application
+4. Report Distribution Automation
 
 ## Technology stack
-Snowflake · Looker Studio · Power BI · Azure DevOps · Power Query · SQL Server · dbt · ChatGPT · Claude · Netlify
+Snowflake · SQL · Looker · Power BI · Python · Streamlit · Snowpark · dbt · Power Automate · Azure DevOps · Git
 
-## Portfolio projects
-1. Executive Analytics Dashboard
-2. Modern Analytics Engineering Pipeline
-3. SQL Performance & Data Quality Lab
-4. Automated BI Reporting Pipeline
-5. AI Analytics Copilot
-
-All public examples use synthetic or public data only. No employer data, credentials, proprietary SQL, or confidential business logic are included.
+All public case studies use synthetic or anonymized visuals. Corporate data, patient information, internal identifiers, credentials, proprietary SQL, and confidential implementation details are excluded.
