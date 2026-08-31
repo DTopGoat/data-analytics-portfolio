@@ -1,0 +1,1 @@
+Normal repository image files; no embedded CSS data URIs.
