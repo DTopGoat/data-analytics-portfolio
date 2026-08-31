@@ -1,0 +1,1 @@
+Carousel binary assets are being restored as repository files.
