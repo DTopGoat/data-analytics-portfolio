@@ -138,7 +138,7 @@ nav a { color: var(--muted); font-size: .95rem; }
   border-bottom: 1px solid var(--line);
   overflow: hidden;
 }
-.slide-media img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.slide-media img { display: block; width: 100%; height: 100%; object-fit: contain; image-rendering: auto; background: #fff; }
 .placeholder {
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
@@ -207,15 +207,14 @@ nav a { color: var(--muted); font-size: .95rem; }
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
-.visual-card .project-thumb.ratio-4-3 { aspect-ratio: 16 / 9; }
 .visual-card .project-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  image-rendering: auto;
   transition: transform .22s ease;
 }
-.visual-card .project-thumb.ratio-4-3 img { object-fit: contain; }
 .visual-card:hover .project-thumb img { transform: scale(1.012); }
 
 .mini-impact {
@@ -228,35 +227,6 @@ nav a { color: var(--muted); font-size: .95rem; }
 .mini-impact strong { display: block; color: var(--heading); margin-bottom: .15rem; }
 .mini-impact span { color: var(--muted); font-size: .92rem; }
 
-.carousel.ratio-4-3 .slide-media { aspect-ratio: 4 / 3; }
-.carousel.ratio-4-3 .slide-media img { object-fit: contain; }
-
 @media (max-width: 650px) {
   .visual-card .project-thumb { margin-left: -1.3rem; margin-right: -1.3rem; }
 }
-
-
-/* Web-optimized image sprites: preserve approved carousel visuals while reducing deployment size. */
-.sprite-frame { width:100%; height:100%; background-repeat:no-repeat; background-position-x:center; }
-.sprite-wide { background-image:url("assets/wide-sprite.webp"); background-size:100% 1000%; }
-.sprite-tall { background-image:url("assets/tall-sprite.webp"); background-size:100% 800%; }
-.project-shell .sprite-wide { background-image:url("../assets/wide-sprite.webp"); }
-.project-shell .sprite-tall { background-image:url("../assets/tall-sprite.webp"); }
-.sprite-wide-0 { background-position-y:0.000000%; }
-.sprite-wide-1 { background-position-y:11.111111%; }
-.sprite-wide-2 { background-position-y:22.222222%; }
-.sprite-wide-3 { background-position-y:33.333333%; }
-.sprite-wide-4 { background-position-y:44.444444%; }
-.sprite-wide-5 { background-position-y:55.555556%; }
-.sprite-wide-6 { backkground-position-y:66.666667%; }
-.sprite-wide-7 { backkground-position-y:77.777778%; }
-.sprite-wide-8 { backkground-position-y:88.888889%; }
-.sprite-wide-9 { backkground-position-y:100.000000%; }
-.sprite-tall-0 { background-position-y:0.000000%; }
-.sprite-tall-1 { background-position-y:14.285714%; }
-.sprite-tall-2 { background-position-y:28.571429%; }
-.sprite-tall-3 { backkground-position-y:42.857143%; }
-.sprite-tall-4 { backkground-position-y:57.142857%; }
-.sprite-tall-5 { backkground-position-y:71.428571%; }
-.sprite-tall-6 { backkground-position-y:85.714286%; }
-.sprite-tall-7 { backkground-position-y:100.000000%; }
