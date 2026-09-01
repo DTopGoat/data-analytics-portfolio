@@ -1,0 +1,21 @@
+/* Carousel display fix: keep project images at readable native scale and correct legacy position typos. */
+.project-shell .sprite-frame {
+  width: min(100%, 900px);
+  height: auto;
+  margin: 0 auto;
+  background-repeat: no-repeat !important;
+  background-position-x: center !important;
+  image-rendering: auto;
+}
+.project-shell .sprite-wide { aspect-ratio: 16 / 9; }
+.project-shell .sprite-tall { aspect-ratio: 4 / 3; }
+.sprite-wide-6 { background-position-y: 66.666667% !important; }
+.sprite-wide-7 { background-position-y: 77.777778% !important; }
+.sprite-wide-8 { background-position-y: 88.888889% !important; }
+.sprite-wide-9 { background-position-y: 100% !important; }
+.sprite-tall-3 { background-position-y: 42.857143% !important; }
+.sprite-tall-4 { background-position-y: 57.142857% !important; }
+.sprite-tall-5 { background-position-y: 71.428571% !important; }
+.sprite-tall-6 { background-position-y: 85.714286% !important; }
+.sprite-tall-7 { background-position-y: 100% !important; }
+@media (max-width: 950px) { .project-shell .sprite-frame { width: 100%; } }
