@@ -1,0 +1,1 @@
+High-quality carousel image tiles. Each slide is reconstructed from four 1200px AVIF strips to avoid binary upload truncation while preserving readable image quality.
