@@ -1,49 +1,53 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Report Distribution Automation portfolio case study by Clint Aguilar." name="description"/>
-<title>Report Distribution Automation | Clint Aguilar</title>
-<link href="../styles.css" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report and alert automation · Clint Aguilar</title>
+<meta name="description" content="Five recurring reports and exception alerts that used to be assembled by hand. Together they saved more than 100 hours of manual work.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-<header class="site-header">
-<a class="brand" href="../index.html">Clint Aguilar</a>
-<nav><a href="../index.html#projects">Back to Projects</a><a href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer" target="_blank">LinkedIn</a></nav>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap top-inner">
+<a class="name" href="../index.html">Clint Aguilar</a>
+<nav aria-label="Main">
+<a href="../index.html#work">Work</a>
+<a href="../index.html#experience">Experience</a>
+<a href="../index.html#contact">Contact</a>
+</nav>
+</div>
 </header>
-<main class="project-shell project-report">
-<section class="project-hero">
-<p class="eyebrow">Snowflake · Looker · SQL · Power Automate</p>
-<h1>Report Distribution Automation</h1>
-<p class="lead">A portfolio of five recurring reporting and exception-alert workflows that detect important changes, prepare concise outputs, and deliver them to the teams responsible for follow-up.</p>
-<div class="project-meta"><span class="pill">5 recurring automations</span><span class="pill">100+ hours of manual effort saved</span><span class="pill">Synthetic process visuals</span></div>
-</section>
-<section class="project-summary">
-<article class="card">
-<h2>Automation pattern</h2>
-<p>Each workflow starts with a scheduled Snowflake or Looker process, detects a business or data-quality condition, produces an alert/report, and delivers it to stakeholders. Power Automate is used when additional file handling, message formatting, or recipient distribution is required.</p>
-</article>
-<article class="card">
-<h2>Business value</h2>
-<p>Reduce manual report forwarding, improve visibility into operational exceptions, support timely follow-up, and protect downstream reporting quality.</p>
-<h2>Technology</h2>
-<p>Snowflake, SQL, Looker, Power Automate, email/report distribution</p>
-</article>
-</section>
-<section class="carousel-wrap">
-<div class="section-heading"><p class="eyebrow">Automation portfolio</p><h2>Five recurring workflows</h2><p>One executive diagram shows the general structure of all five automations using synthetic and generalized implementation details.</p></div>
-<div class="carousel" data-carousel="">
-<div class="carousel-track">
-<figure class="slide"><div class="slide-media"><img alt="Five synthetic automated report and alert workflows" decoding="async" height="1350" src="../assets/projects/report/report-automation-01-business-processes.png" width="2400"/></div><figcaption><strong>Automated reporting portfolio</strong>Five recurring business processes connect Snowflake or Looker to Power Automate and stakeholder delivery, with direct Looker-to-stakeholder distribution for unmapped-study exceptions.</figcaption></figure>
+<main id="main">
+<article class="wrap case">
+<p class="back"><a href="../index.html#work">&larr; All work</a></p>
+<p class="kicker">Day job · Snowflake tasks, Looker, Power Automate</p>
+<h1>Report and alert automation</h1>
+<p class="lede">Five recurring reports and exception alerts that used to be assembled by hand. Together they saved more than 100 hours of manual work.</p>
+
+<figure class="hero-fig"><img src="../assets/projects/report/report-automation-01-business-processes-1200.webp" srcset="../assets/projects/report/report-automation-01-business-processes-1200.webp 1200w, ../assets/projects/report/report-automation-01-business-processes.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Report and alert automation, overview" width="2400" height="1350" decoding="async"></figure>
+<div class="case-body">
+<div class="prose">
+<h2>The question</h2>
+<p>Daily, weekly and monthly reports were being pulled, cleaned and forwarded by hand, and some data-quality exceptions were only noticed when someone happened to look.</p>
+<h2>What I did</h2>
+<p>I automated five of them. Each starts with a scheduled Snowflake task or Looker schedule, checks for a business or data-quality condition, and sends a short report or alert to the people who act on it. Power Automate, Office Scripts and Excel handle file attachments and distribution where Snowflake or Looker can’t do it alone. That removed more than 100 hours of manual effort.</p>
 </div>
-<button aria-label="Previous slide" class="carousel-control prev" type="button">‹</button><button aria-label="Next slide" class="carousel-control next" type="button">›</button>
+<aside class="case-meta">
+<h2>Tools</h2><p>Snowflake tasks, SQL, Looker, Power Automate, Office Scripts, Excel</p>
+<h2>Data</h2><p>Screens and diagrams use synthetic data. Client names, patient data, internal identifiers and code are left out.</p>
+</aside>
 </div>
-<div aria-label="Carousel navigation" class="carousel-dots"></div>
-</section>
-<section class="privacy-note">The public diagrams use generalized architecture and synthetic content only. Internal object names, credentials, email addresses, corporate datasets, environment details, and proprietary implementation information are excluded.</section>
+<p class="next">Next: <a href="clinical-trials-ops.html">Clinical trials operations dashboard</a></p>
+</article>
 </main>
-<script src="../carousel.js"></script>
+<footer class="foot">
+<div class="wrap foot-inner">
+<p>Clint Aguilar &middot; Baguio City, Philippines &middot; working US hours, remote</p>
+<p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
+</div>
+</footer>
 </body>
 </html>

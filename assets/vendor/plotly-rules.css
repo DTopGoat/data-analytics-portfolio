@@ -1,0 +1,1 @@
+/* Plotly inserts its runtime rules into this same-origin stylesheet via CSSOM, so no inline <style> is needed under the CSP. */

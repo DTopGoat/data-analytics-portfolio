@@ -1,54 +1,60 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Study Mapping Application portfolio case study by Clint Aguilar." name="description"/>
-<title>Study Mapping Application | Clint Aguilar</title>
-<link href="../styles.css" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study mapping app · Clint Aguilar</title>
+<meta name="description" content="A Streamlit app that matches study and site records across Salesforce, NetSuite and CRIO, and stores approved matches in Snowflake.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-<header class="site-header">
-<a class="brand" href="../index.html">Clint Aguilar</a>
-<nav><a href="../index.html#projects">Back to Projects</a><a href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer" target="_blank">LinkedIn</a></nav>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap top-inner">
+<a class="name" href="../index.html">Clint Aguilar</a>
+<nav aria-label="Main">
+<a href="../index.html#work">Work</a>
+<a href="../index.html#experience">Experience</a>
+<a href="../index.html#contact">Contact</a>
+</nav>
+</div>
 </header>
-<main class="project-shell project-study">
-<section class="project-hero">
-<p class="eyebrow">Streamlit · Snowflake · Salesforce · NetSuite · CRIO</p>
-<h1>Study Mapping Application</h1>
-<p class="lead">A centralized application for mapping study and site records across Salesforce, NetSuite environments, and CRIO, with Snowflake maintaining the saved mapping relationships.</p>
-<div class="project-meta"><span class="pill">Synthetic / anonymized visuals</span><span class="pill">Proprietary details omitted</span></div>
-</section>
-<section class="project-summary">
-<article class="card">
-<h2>Problem &amp; outcome</h2>
-<p>Study and site records can use different names, identifiers, and formats across business systems. The application provides one place to compare, match, validate, and maintain those relationships for more consistent downstream reporting.</p>
-<div class="mini-impact"><strong>Key value</strong><span>Less manual reconciliation · improved data quality · visible mapping status · more consistent reporting</span></div>
-</article>
-<article class="card">
-<h2>What I built</h2>
-<p>Data exploration, study mapping, auto-match assistance, legacy mapping, site mapping, mapped-record maintenance, and Snowflake persistence.</p>
-<h2>Technology</h2>
-<p>Streamlit, Snowflake/Snowpark, Salesforce, NetSuite, CRIO</p>
-</article>
-</section>
-<section class="carousel-wrap">
-<div class="section-heading"><p class="eyebrow">Project walkthrough</p><h2>How the application works</h2><p>Five executive visuals explain the business value, system architecture, study lifecycle, site workflow, and operating model.</p></div>
-<div class="carousel" data-carousel="">
-<div class="carousel-track">
-<figure class="slide"><div class="slide-media"><img alt="Executive overview of the Study Mapping Application" decoding="async" height="1350" src="../assets/projects/study/study-mapping-01-executive-overview.png" width="2400"/></div><figcaption><strong>1. Executive overview</strong>A governed mapping layer aligns inconsistent study and site records so downstream reporting uses trusted relationships.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Study Mapping Application system architecture" decoding="async" height="1350" src="../assets/projects/study/study-mapping-02-system-architecture.png" width="2400"/></div><figcaption><strong>2. System architecture</strong>Source systems feed the Streamlit mapping application, while Snowflake stores and maintains approved mappings.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Study Mapping Application study lifecycle" decoding="async" height="1350" src="../assets/projects/study/study-mapping-03-study-lifecycle.png" width="2400"/></div><figcaption><strong>3. Study lifecycle</strong>Candidate study matches move through comparison, validation, approval, persistence, and downstream consumption.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Study Mapping Application site workflow" decoding="async" height="1350" src="../assets/projects/study/study-mapping-04-site-workflow.png" width="2400"/></div><figcaption><strong>4. Site workflow</strong>Site relationships are reviewed and maintained through a focused workflow that makes mapping status and exceptions visible.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Study Mapping Application operating model" decoding="async" height="1350" src="../assets/projects/study/study-mapping-05-operating-model.png" width="2400"/></div><figcaption><strong>5. Operating model</strong>Defined ownership, quality controls, auditability, and maintenance practices keep mappings reliable over time.</figcaption></figure>
+<main id="main">
+<article class="wrap case">
+<p class="back"><a href="../index.html#work">&larr; All work</a></p>
+<p class="kicker">Day job · Streamlit, Snowflake</p>
+<h1>Study mapping app</h1>
+<p class="lede">A Streamlit app that matches study and site records across Salesforce, NetSuite and CRIO, and stores approved matches in Snowflake.</p>
+
+<figure class="hero-fig"><img src="../assets/projects/study/study-mapping-01-executive-overview-1200.webp" srcset="../assets/projects/study/study-mapping-01-executive-overview-1200.webp 1200w, ../assets/projects/study/study-mapping-01-executive-overview.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Study mapping app, overview" width="2400" height="1350" decoding="async"></figure>
+<div class="case-body">
+<div class="prose">
+<h2>The question</h2>
+<p>The same study or site had different names and IDs in the CRM, the ERP and the clinical trial system. Reports that joined them came out with gaps and mismatched totals, and fixing it meant manual lookups.</p>
+<h2>What I did</h2>
+<p>I built a Streamlit app where people search, compare and approve matches: by study name, by protocol, legacy mappings, or auto-match suggestions. Approved relationships are saved in Snowflake, so every downstream report uses the same cross-system IDs.</p>
 </div>
-<button aria-label="Previous slide" class="carousel-control prev" type="button">‹</button><button aria-label="Next slide" class="carousel-control next" type="button">›</button>
+<aside class="case-meta">
+<h2>Tools</h2><p>Streamlit, Snowflake, Snowpark, SQL, Python</p>
+<h2>Data</h2><p>Screens and diagrams use synthetic data. Client names, patient data, internal identifiers and code are left out.</p>
+</aside>
 </div>
-<div aria-label="Carousel navigation" class="carousel-dots"></div>
+<section class="gallery" aria-label="Screens and diagrams">
+<h2>Screens and diagrams</h2>
+<figure><img src="../assets/projects/study/study-mapping-02-system-architecture-1200.webp" srcset="../assets/projects/study/study-mapping-02-system-architecture-1200.webp 1200w, ../assets/projects/study/study-mapping-02-system-architecture.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="System architecture diagram" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Architecture: three source systems feed the app; Snowflake holds the approved mappings.</figcaption></figure>
+<figure><img src="../assets/projects/study/study-mapping-03-study-lifecycle-1200.webp" srcset="../assets/projects/study/study-mapping-03-study-lifecycle-1200.webp 1200w, ../assets/projects/study/study-mapping-03-study-lifecycle.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Study mapping lifecycle diagram" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Study mapping: several matching paths converge on one review-and-save step.</figcaption></figure>
+<figure><img src="../assets/projects/study/study-mapping-04-site-workflow-1200.webp" srcset="../assets/projects/study/study-mapping-04-site-workflow-1200.webp 1200w, ../assets/projects/study/study-mapping-04-site-workflow.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Site mapping workflow diagram" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Site mapping: CRM site, then ERP match, then clinical match, then save.</figcaption></figure>
+<figure><img src="../assets/projects/study/study-mapping-05-operating-model-1200.webp" srcset="../assets/projects/study/study-mapping-05-operating-model-1200.webp 1200w, ../assets/projects/study/study-mapping-05-operating-model.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Operating model diagram" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Controls: environment-aware connections, validated saves, and managed edits.</figcaption></figure>
 </section>
-<section class="privacy-note">All examples shown here are synthetic or anonymized. Employer-specific study data, internal identifiers, credentials, and proprietary implementation details are not included.</section>
+<p class="next">Next: <a href="report-distribution-automation.html">Report and alert automation</a></p>
+</article>
 </main>
-<script src="../carousel.js"></script>
+<footer class="foot">
+<div class="wrap foot-inner">
+<p>Clint Aguilar &middot; Baguio City, Philippines &middot; working US hours, remote</p>
+<p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
+</div>
+</footer>
 </body>
 </html>

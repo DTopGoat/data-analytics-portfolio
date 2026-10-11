@@ -1,111 +1,134 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Clint Aguilar — clinical data analytics, SQL, BI, Snowflake, automation and analytics engineering portfolio." name="description"/>
-<title>Clint Aguilar | Clinical Data Analytics Portfolio</title>
-<link href="styles.css" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clint Aguilar · SQL, dbt and BI developer</title>
+<meta name="description" content="Clint Aguilar builds Snowflake and dbt models and Looker and Power BI dashboards, mostly for clinical research data.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header">
-<a class="brand" href="#top">Clint Aguilar</a>
-<nav>
-<a href="#expertise">Expertise</a>
-<a href="#projects">Projects</a>
-<a href="#certifications">Certifications</a>
-<a href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-<a href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" rel="noopener noreferrer" target="_blank">Upwork</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap top-inner">
+<a class="name" href="index.html">Clint Aguilar</a>
+<nav aria-label="Main">
+<a href="index.html#work">Work</a>
+<a href="index.html#experience">Experience</a>
+<a href="index.html#contact">Contact</a>
 </nav>
+</div>
 </header>
-<main id="top">
-<section class="hero container">
-<p class="eyebrow">Clinical Data Analytics • SQL • BI • Automation</p>
-<h1>Clear analytics for complex clinical and operational data.</h1>
-<p class="lead">I build dashboards, data applications, reporting workflows, and automation that help teams understand performance, investigate data issues, and make better decisions.</p>
-<div class="actions">
-<a class="button primary" href="#projects">View Projects</a>
-<a class="button" href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<main id="main">
+<section class="intro wrap">
+<h1>I build the SQL models and dashboards that teams check their numbers against.</h1>
+<div class="intro-cols">
+<div>
+<p class="lede">I’m Clint Aguilar, a SQL developer and data analyst. I work mostly in Snowflake, dbt, Looker and Power BI, on clinical research data.</p>
+<p>For the past two years I’ve handled reporting for a US clinical research network: 30+ dashboards covering 150+ studies across 11 sites, the Snowflake and dbt models behind them, and the checks that make sure they match the source systems. Before that I spent two years in AWS support and over three years as a SQL Server DBA.</p>
+<p class="intro-links"><a class="btn" href="https://www.upwork.com/freelancers/~010826a35caec3b156" rel="noopener noreferrer">Hire me on Upwork</a> <a href="#work">See the work</a></p>
+</div>
+<dl class="facts">
+<div><dt>30+</dt><dd>Looker and Power BI dashboards and recurring reports I maintain</dd></div>
+<div><dt>100+ hours</dt><dd>of manual work removed by automating five recurring reports</dd></div>
+<div><dt>~97%</dt><dd>of expected records a faulty dbt incremental key was dropping, which I traced and helped fix</dd></div>
+<div><dt>1M+ rows</dt><dd>validated against source in Python and SQL</dd></div>
+</dl>
 </div>
 </section>
-<div class="stat-strip">
-<section class="section container">
-<div class="grid four">
-<article class="stat"><h3>8+ Years</h3><p>Data, databases, analytics, and production support.</p></article>
-<article class="stat"><h3>150+ Studies</h3><p>Clinical research reporting and operational analytics.</p></article>
-<article class="stat"><h3>30+ Reports</h3><p>Dashboards and recurring reporting assets supported.</p></article>
-<article class="stat"><h3>1M+ Rows</h3><p>Large-scale validation, transformation, and reconciliation.</p></article>
+
+<section class="wrap block" id="work">
+<h2>Projects on public data</h2>
+<p class="section-note">Everything here runs on open datasets, so you can check the numbers.</p>
+<ul class="work-list">
+<li class="work-item work-big">
+<a class="work-thumb" href="projects/clinical-trials-ops.html" tabindex="-1" aria-hidden="true"><img src="assets/img/work/clinical-trials-ops.webp" alt="" width="1200" height="900" loading="lazy" decoding="async"></a>
+<div class="work-text">
+<p class="kicker">Public data · Python, DuckDB SQL, Plotly</p>
+<h3><a href="projects/clinical-trials-ops.html">Clinical trials operations dashboard</a></h3>
+<p>Status, phase mix, sponsors, site footprint and cycle times for 4,477 Type 2 Diabetes trials registered on ClinicalTrials.gov (2015–2024 starts).</p>
+</div>
+</li>
+<li class="work-item">
+<a class="work-thumb" href="projects/clinical-trials-dbt.html" tabindex="-1" aria-hidden="true"><img src="assets/img/work/clinical-trials-dbt.webp" alt="" width="1200" height="900" loading="lazy" decoding="async"></a>
+<div class="work-text">
+<p class="kicker">Public data · dbt, DuckDB, SQL, GitHub Actions</p>
+<h3><a href="projects/clinical-trials-dbt.html">Clinical trials analytics in dbt</a></h3>
+<p>A tested star schema for 4,288 completed cancer trials: staging, intermediate and mart layers, 48 data tests, CI on every push.</p>
+</div>
+</li>
+<li class="work-item">
+<a class="work-thumb" href="projects/business-kpi.html" tabindex="-1" aria-hidden="true"><img src="assets/img/work/business-kpi.webp" alt="" width="1200" height="900" loading="lazy" decoding="async"></a>
+<div class="work-text">
+<p class="kicker">Public data · DuckDB SQL, Python, Plotly</p>
+<h3><a href="projects/business-kpi.html">E-commerce sales and customer KPIs</a></h3>
+<p>Revenue, growth, Pareto and cohort retention for a UK online retailer, built from 1.07M raw transaction lines.</p>
+</div>
+</li>
+</ul>
+</section>
+
+<section class="wrap block">
+<h2>From my day job</h2>
+<p class="section-note">Real projects. The client’s data is confidential, so every screenshot and diagram here uses synthetic data and generic names.</p>
+<ul class="rows">
+<li><a href="projects/protocol-deviation-dashboard.html"><span class="row-title">Protocol deviation dashboard</span><span class="row-sum">A Looker dashboard I built and presented to Regulatory Affairs, Clinical Ops QC and Quality & Compliance leadership.</span><span class="row-tools">Looker, SQL, Snowflake</span></a></li><li><a href="projects/patient-recruitment-analytics.html"><span class="row-title">Patient recruitment search app</span><span class="row-sum">Datasets and a Streamlit app that let clinical teams test protocol criteria against patient data and see matching cohorts and the closest sites.</span><span class="row-tools">Snowflake, Snowpark, SQL, Python, Pandas, Streamlit</span></a></li><li><a href="projects/study-mapping-application.html"><span class="row-title">Study mapping app</span><span class="row-sum">A Streamlit app that matches study and site records across Salesforce, NetSuite and CRIO, and stores approved matches in Snowflake.</span><span class="row-tools">Streamlit, Snowflake, Snowpark, SQL, Python</span></a></li><li><a href="projects/report-distribution-automation.html"><span class="row-title">Report and alert automation</span><span class="row-sum">Five recurring reports and exception alerts that used to be assembled by hand. Together they saved more than 100 hours of manual work.</span><span class="row-tools">Snowflake tasks, SQL, Looker, Power Automate, Office Scripts, Excel</span></a></li>
+</ul>
+</section>
+
+<section class="wrap block" id="experience">
+<h2>Experience</h2>
+<ol class="timeline">
+<li><p class="when">Aug 2024 – now</p><div><h3>SQL Developer &amp; Data Analyst</h3><p class="where">Remote contract for a US clinical research network</p>
+<p>I build Snowflake SQL and dbt transformations from source to curated to consumption layers, and the Looker and Power BI reporting on top for clinical operations, recruitment, quality, finance and leadership. When a dashboard disagrees with a source system, I trace it through the app, the dbt models and the report logic and write up the root cause. That is how I found the incremental key that was dropping ~97% of expected worker assignments. I also deploy through Azure DevOps and Git, and write handoff docs for the pipelines and apps.</p></div></li>
+<li><p class="when">May 2022 – Jun 2024</p><div><h3>Cloud Support Engineer</h3><p class="where">Amazon Web Services, remote</p>
+<p>Enterprise customer incidents on Amazon Redshift, S3 and related services: storage, permissions, connectivity, configuration and performance. I worked out root causes with internal engineering and wrote Python diagnostics and troubleshooting guides.</p></div></li>
+<li><p class="when">Nov 2018 – Mar 2022</p><div><h3>Project Engineer (Database Administrator)</h3><p class="where">Wipro, on a Texas Instruments account</p>
+<p>Ran enterprise SQL Server environments in SSMS: performance, integrity, security, access and scheduled jobs. I wrote T-SQL queries, views and stored procedures for reporting and troubleshooting.</p></div></li>
+<li><p class="when">Jul 2017 – Jul 2018</p><div><h3>Robotics Teacher</h3><p class="where">Berkeley School, Baguio</p>
+<p>It’s where I learned to explain technical things in plain language.</p></div></li>
+</ol>
+</section>
+
+<section class="wrap block split">
+<div>
+<h2>Tools</h2>
+<dl class="tools">
+<dt>SQL</dt><dd>Snowflake SQL, T-SQL, PostgreSQL. CTEs, window functions, stored procedures, query tuning</dd>
+<dt>Modeling</dt><dd>dbt (including incremental models), dimensional models, marts, data tests</dd>
+<dt>BI</dt><dd>Looker (LookML, scheduled reports), Power BI, DAX, Excel</dd>
+<dt>Python</dt><dd>Validation and reconciliation scripts, automation, Streamlit, Pandas</dd>
+<dt>Platform</dt><dd>Snowflake, SQL Server, Amazon Redshift and S3, Azure DevOps CI/CD, Git</dd>
+<dt>Automation</dt><dd>Power Automate, Office Scripts, Snowflake tasks</dd>
+</dl>
+</div>
+<div>
+<h2>Credentials</h2>
+<ul class="plain">
+<li>DataCamp Data Analyst Associate, valid through Aug 2027</li>
+<li>BS Computer Engineering, University of Baguio</li>
+</ul>
+<h2 class="mt">Domain</h2>
+<p>Clinical research operations: recruitment and screening, protocol deviations, study and site master data, HIPAA-regulated data.</p>
 </div>
 </section>
-</div>
-<section class="section container" id="expertise">
-<div class="section-heading">
-<p class="eyebrow">Capabilities</p>
-<h2>Analytics with strong engineering depth</h2>
-<p>I work across the reporting path—from source data and transformations to dashboards, validation, automation, and stakeholder delivery.</p>
-</div>
-<div class="grid four">
-<article class="card"><h3>Clinical Analytics</h3><p>Recruitment, study operations, visits, deviations, laboratory data, and operational KPIs.</p></article>
-<article class="card"><h3>BI &amp; Reporting</h3><p>Looker and Power BI dashboards, executive reporting, KPI design, and recurring reports.</p></article>
-<article class="card"><h3>Data Engineering</h3><p>Snowflake, dbt, SQL transformations, ETL/ELT, modeling, and data quality checks.</p></article>
-<article class="card"><h3>Automation</h3><p>Python, Power Automate, Azure DevOps, scheduled reporting, validation, and workflow automation.</p></article>
-</div>
-</section>
-<section class="section container" id="projects">
-<div class="section-heading">
-<p class="eyebrow">Selected work</p>
-<h2>Projects</h2>
-<p>Each case study is presented through synthetic or anonymized visuals. Corporate data, patient information, internal identifiers, and proprietary implementation details are excluded.</p>
-</div>
-<div class="grid two">
-<article class="card project visual-card project-protocol">
-<a aria-label="View Protocol Deviation Dashboard case study" class="project-thumb" href="projects/protocol-deviation-dashboard.html"><img alt="Synthetic Protocol Deviation Dashboard overview" decoding="async" height="1350" loading="lazy" src="assets/projects/protocol/protocol-deviation-01-general-overview.png" width="2400"/></a>
-<h3>Protocol Deviation Dashboard</h3>
-<p>Clinical operations dashboard for monitoring deviation KPIs, classifications, site errors, unanswered questions, and deviation timing.</p>
-<p class="stack">Looker · SQL · Clinical Operations Analytics · Data Quality</p>
-<a class="project-link" href="projects/protocol-deviation-dashboard.html">View case study →</a>
-</article>
-<article class="card project visual-card project-patient">
-<a aria-label="View Patient Recruitment Analytics case study" class="project-thumb" href="projects/patient-recruitment-analytics.html"><img alt="Executive overview of the synthetic Patient Recruitment Analytics solution" decoding="async" height="1350" loading="lazy" src="assets/projects/patient/patient-recruitment-01-executive-overview.png" width="2400"/></a>
-<h3>Patient Recruitment Analytics</h3>
-<p>Interactive cohort feasibility and recruitment application using clinical, demographic, medication, laboratory, visit, and site criteria.</p>
-<p class="stack">Snowflake · Snowpark · Python · Streamlit · SQL</p>
-<a class="project-link" href="projects/patient-recruitment-analytics.html">View case study →</a>
-</article>
-<article class="card project visual-card project-study">
-<a aria-label="View Study Mapping Application case study" class="project-thumb" href="projects/study-mapping-application.html"><img alt="Executive overview of the synthetic Study Mapping Application" decoding="async" height="1350" loading="lazy" src="assets/projects/study/study-mapping-01-executive-overview.png" width="2400"/></a>
-<h3>Study Mapping Application</h3>
-<p>Streamlit mapping application that aligns study and site records across Salesforce, NetSuite environments, and CRIO with Snowflake persistence.</p>
-<p class="stack">Streamlit · Snowflake · Salesforce · NetSuite · CRIO</p>
-<a class="project-link" href="projects/study-mapping-application.html">View case study →</a>
-</article>
-<article class="card project visual-card project-report">
-<a aria-label="View Report Distribution Automation case study" class="project-thumb" href="projects/report-distribution-automation.html"><img alt="Five synthetic automated reporting and alert workflows" decoding="async" height="1350" loading="lazy" src="assets/projects/report/report-automation-01-business-processes.png" width="2400"/></a>
-<h3>Report Distribution Automation</h3>
-<p>Five recurring reporting and alert automations using Snowflake or Looker with Power Automate and stakeholder delivery workflows.</p>
-<p class="stack">Snowflake · Looker · SQL · Power Automate · Reporting Automation</p>
-<a class="project-link" href="projects/report-distribution-automation.html">View case study →</a>
-</article>
-</div>
-</section>
-<section class="section container" id="certifications">
-<div class="section-heading"><p class="eyebrow">Credentials</p><h2>Certifications</h2></div>
-<div class="grid two">
-<article class="card"><h3>DataCamp</h3><p>SQL Associate · Data Engineer Associate · Data Analyst Associate · Data Literacy</p></article>
-<article class="card"><h3>Engineering Foundation</h3><p>Bachelor of Science in Computer Engineering with a background in enterprise systems and technical problem solving.</p></article>
-</div>
-</section>
-<section class="section container callout">
-<p class="eyebrow">Data analytics &amp; engineering</p>
-<h2>Need help turning messy data into usable reporting?</h2>
-<p>SQL, dashboards, Snowflake, dbt, analytics, automation, and reporting troubleshooting.</p>
-<div class="actions">
-<a class="button primary" href="https://www.upwork.com/freelancers/~010826a35caec3b156?mp_source=share" rel="noopener noreferrer" target="_blank">Hire Me on Upwork</a>
-<a class="button" href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a>
-</div>
+
+<section class="wrap block contact" id="contact">
+<h2>Work with me</h2>
+<p>I take on Snowflake and dbt modeling, Power BI and Looker dashboards, SQL Server tuning, and “why doesn’t this number match” investigations. I work remotely and asynchronously, with written updates, during US hours.</p>
+<ul class="contact-list">
+<li><a class="btn" href="https://www.upwork.com/freelancers/~010826a35caec3b156" rel="noopener noreferrer">Hire me on Upwork</a></li>
+<li><a href="#" data-placeholder="CONTACT_EMAIL">Email: [CONTACT_EMAIL]</a></li>
+<li><a href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer">LinkedIn</a></li>
+</ul>
 </section>
 </main>
-<footer class="container footer"><p>© 2026 Clint Aguilar. Portfolio visuals use synthetic or anonymized data. Proprietary implementation details are omitted.</p></footer>
+<footer class="foot">
+<div class="wrap foot-inner">
+<p>Clint Aguilar &middot; Baguio City, Philippines &middot; working US hours, remote</p>
+<p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
+</div>
+</footer>
 </body>
 </html>

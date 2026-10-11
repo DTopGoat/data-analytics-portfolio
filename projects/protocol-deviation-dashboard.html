@@ -1,53 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Protocol Deviation Dashboard portfolio case study by Clint Aguilar." name="description"/>
-<title>Protocol Deviation Dashboard | Clint Aguilar</title>
-<link href="../styles.css" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocol deviation dashboard · Clint Aguilar</title>
+<meta name="description" content="A Looker dashboard I built and presented to Regulatory Affairs, Clinical Ops QC and Quality &amp; Compliance leadership.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-<header class="site-header">
-<a class="brand" href="../index.html">Clint Aguilar</a>
-<nav><a href="../index.html#projects">Back to Projects</a><a href="https://www.linkedin.com/in/clint-aguilar/" rel="noopener noreferrer" target="_blank">LinkedIn</a></nav>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap top-inner">
+<a class="name" href="../index.html">Clint Aguilar</a>
+<nav aria-label="Main">
+<a href="../index.html#work">Work</a>
+<a href="../index.html#experience">Experience</a>
+<a href="../index.html#contact">Contact</a>
+</nav>
+</div>
 </header>
-<main class="project-shell project-protocol">
-<section class="project-hero">
-<p class="eyebrow">Looker · SQL · Clinical Operations Analytics · Data Quality</p>
-<h1>Protocol Deviation Dashboard</h1>
-<p class="lead">A clinical operations dashboard designed to give Regulatory Affairs, Quality, and operational leadership a clear view of protocol deviations, documentation gaps, site trends, and deviation timing.</p>
-<div class="project-meta"><span class="pill">Synthetic / anonymized visuals</span><span class="pill">No corporate or patient data</span></div>
-</section>
-<section class="project-summary">
-<article class="card">
-<h2>What the dashboard answers</h2>
-<ul><li>How many subjects have recorded protocol deviations?</li><li>Which deviation types and site-error reasons occur most often?</li><li>Where are protocol questions incomplete or unanswered?</li><li>How quickly are deviations identified and how long do they remain open?</li></ul>
-</article>
-<article class="card">
-<h2>My role</h2>
-<p>Requirements analysis, SQL/data preparation, KPI logic, dashboard design, data validation, and presentation to quality and regulatory leadership.</p>
-<h2>Technology</h2>
-<p>Looker, SQL, clinical operations analytics, data quality validation</p>
-</article>
-</section>
-<section class="carousel-wrap">
-<div class="section-heading"><p class="eyebrow">Dashboard walkthrough</p><h2>Five operational views</h2><p>The images below are the finalized synthetic versions of the dashboard views.</p></div>
-<div class="carousel" data-carousel="">
-<div class="carousel-track">
-<figure class="slide"><div class="slide-media"><img alt="Synthetic Protocol Deviation Dashboard general overview" decoding="async" height="1350" src="../assets/projects/protocol/protocol-deviation-01-general-overview.png" width="2400"/></div><figcaption><strong>1. General overview</strong>KPI summary with deviation determination, site-error comparisons, unanswered questions, site activity, and study-level deviation rates.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Synthetic complete protocol deviation list" decoding="async" height="1350" src="../assets/projects/protocol/protocol-deviation-02-complete-list.png" width="2400"/></div><figcaption><strong>2. Complete deviation list</strong>Detailed operational view of deviations, classifications, reasons, dates, sites, studies, status, and synthetic record links.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Synthetic site error protocol deviation analysis" decoding="async" height="1350" src="../assets/projects/protocol/protocol-deviation-03-site-error-analysis.png" width="2400"/></div><figcaption><strong>3. Site error analysis</strong>Breakdown of site-related deviation reasons with distribution by site, study, and detailed exception records.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Synthetic unanswered protocol deviation questions analysis" decoding="async" height="1350" src="../assets/projects/protocol/protocol-deviation-04-unanswered-questions.png" width="2400"/></div><figcaption><strong>4. Unanswered protocol questions</strong>Monitoring view for incomplete protocol-deviation questions, affected sites, and detailed records requiring follow-up.</figcaption></figure>
-<figure class="slide"><div class="slide-media"><img alt="Synthetic deviation discovery and duration analysis" decoding="async" height="1350" src="../assets/projects/protocol/protocol-deviation-05-discovery-duration.png" width="2400"/></div><figcaption><strong>5. Discovery &amp; duration</strong>Analysis of identification lag, deviation duration, missing dates, and record-level timing categories.</figcaption></figure>
+<main id="main">
+<article class="wrap case">
+<p class="back"><a href="../index.html#work">&larr; All work</a></p>
+<p class="kicker">Day job · Looker, SQL</p>
+<h1>Protocol deviation dashboard</h1>
+<p class="lede">A Looker dashboard I built and presented to Regulatory Affairs, Clinical Ops QC and Quality & Compliance leadership.</p>
+
+<figure class="hero-fig"><img src="../assets/projects/protocol/protocol-deviation-01-general-overview-1200.webp" srcset="../assets/projects/protocol/protocol-deviation-01-general-overview-1200.webp 1200w, ../assets/projects/protocol/protocol-deviation-01-general-overview.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Protocol deviation dashboard, overview" width="2400" height="1350" decoding="async"></figure>
+<div class="case-body">
+<div class="prose">
+<h2>The question</h2>
+<p>Quality and regulatory teams needed to see protocol deviations in one place: how many subjects are affected, which deviation types and site-error reasons come up most, which protocol questions are left unanswered, and how long deviations take to be identified and closed.</p>
+<h2>What I did</h2>
+<p>I gathered the requirements, wrote the SQL and KPI logic, designed the five views, validated the numbers, and presented the dashboard to the leadership groups who use it. It covers deviation types, affected subjects, identification delays, lag and duration buckets, and records with invalid or missing dates.</p>
 </div>
-<button aria-label="Previous slide" class="carousel-control prev" type="button">‹</button><button aria-label="Next slide" class="carousel-control next" type="button">›</button>
+<aside class="case-meta">
+<h2>Tools</h2><p>Looker, SQL, Snowflake</p>
+<h2>Data</h2><p>Screens and diagrams use synthetic data. Client names, patient data, internal identifiers and code are left out.</p>
+</aside>
 </div>
-<div aria-label="Carousel navigation" class="carousel-dots"></div>
+<section class="gallery" aria-label="Screens and diagrams">
+<h2>Screens and diagrams</h2>
+<figure><img src="../assets/projects/protocol/protocol-deviation-01-general-overview-1200.webp" srcset="../assets/projects/protocol/protocol-deviation-01-general-overview-1200.webp 1200w, ../assets/projects/protocol/protocol-deviation-01-general-overview.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="General overview view, synthetic data" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>General overview: KPIs, determinations, site errors, unanswered questions and study-level rates.</figcaption></figure>
+<figure><img src="../assets/projects/protocol/protocol-deviation-02-complete-list-1200.webp" srcset="../assets/projects/protocol/protocol-deviation-02-complete-list-1200.webp 1200w, ../assets/projects/protocol/protocol-deviation-02-complete-list.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Complete deviation list view, synthetic data" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Complete list: every deviation with classification, reason, dates, site and status.</figcaption></figure>
+<figure><img src="../assets/projects/protocol/protocol-deviation-03-site-error-analysis-1200.webp" srcset="../assets/projects/protocol/protocol-deviation-03-site-error-analysis-1200.webp 1200w, ../assets/projects/protocol/protocol-deviation-03-site-error-analysis.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Site error analysis view, synthetic data" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Site error analysis: reasons broken down by site and study.</figcaption></figure>
+<figure><img src="../assets/projects/protocol/protocol-deviation-04-unanswered-questions-1200.webp" srcset="../assets/projects/protocol/protocol-deviation-04-unanswered-questions-1200.webp 1200w, ../assets/projects/protocol/protocol-deviation-04-unanswered-questions.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Unanswered protocol questions view, synthetic data" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Unanswered questions: incomplete deviation questions that need follow-up.</figcaption></figure>
+<figure><img src="../assets/projects/protocol/protocol-deviation-05-discovery-duration-1200.webp" srcset="../assets/projects/protocol/protocol-deviation-05-discovery-duration-1200.webp 1200w, ../assets/projects/protocol/protocol-deviation-05-discovery-duration.webp 2400w" sizes="(max-width: 1120px) calc(100vw - 40px), 1080px" alt="Discovery and duration view, synthetic data" width="2400" height="1350" loading="lazy" decoding="async"><figcaption>Discovery and duration: identification lag, open time, and missing dates.</figcaption></figure>
 </section>
-<section class="privacy-note">Every dashboard value, site, study, subject identifier, URL, and organization reference shown in this public portfolio is synthetic or anonymized. No corporate or patient data is included.</section>
+<p class="next">Next: <a href="patient-recruitment-analytics.html">Patient recruitment search app</a></p>
+</article>
 </main>
-<script src="../carousel.js"></script>
+<footer class="foot">
+<div class="wrap foot-inner">
+<p>Clint Aguilar &middot; Baguio City, Philippines &middot; working US hours, remote</p>
+<p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
+</div>
+</footer>
 </body>
 </html>

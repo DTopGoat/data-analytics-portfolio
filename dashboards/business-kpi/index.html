@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E-commerce Sales KPI Dashboard — Online Retail II</title><meta name="description" content="Interactive dashboard built on public data by Clint Aguilar.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="dashboard.css">
+<meta name="plotly-maplibre-css" id="9f215cf04c5486422605d13261cb87401f4e7763b6296af81e98efbc0130da53" content="skipped: no map traces; avoids inline style injection under CSP">
+<link rel="stylesheet" id="plotly.js-style-global" href="/assets/vendor/plotly-rules.css">
+</head><body>
+<div class="backbar"><a href="/projects/business-kpi.html">&larr; Case study</a> &middot; <a href="/">Clint Aguilar</a></div>
+</head><body>
+<header><h1>E-commerce Sales &amp; Customer KPI Dashboard</h1>
+<p>UK-based online gift wholesaler/retailer &middot; 1.0M invoice lines, Dec 2009 &ndash; Dec 2011 &middot; revenue trends, customer cohorts &amp; retention, top drivers by product and country</p></header>
+<div class="filters">
+<label>Market<select id="fMkt"></select></label>
+<label>From month<select id="fM0"></select></label>
+<label>To month<select id="fM1"></select></label>
+<button id="btnReset">Reset filters</button><span id="cnt" class="cnt"></span></div>
+<main>
+<div class="kpis" id="kpis"></div>
+<div class="insights"><b>Key findings (all markets, full period)</b><ul>
+<li>Net product revenue was &pound;19.6M from 39,516 orders (AOV &pound;497). Jan&ndash;Nov 2011 grew only 3.0% over the same months of 2010, so the business is flat, not growing.</li>
+<li>Revenue is strongly seasonal. November is the peak month in both years (&pound;1.43M in 2010 and &pound;1.45M in 2011, about 2.3&times; the spring months), which means stock and staffing should be planned around Sep&ndash;Nov.</li>
+<li>Revenue is concentrated: the top 20% of identified customers generate 77% of revenue, and repeat buyers (72% of customers) account for 97% of it. Retention, not acquisition, drives the P&amp;L.</li>
+<li>The UK is 85.5% of revenue. EIRE, the Netherlands and Germany are the next biggest markets, at 3.2%, 2.8% and 2.0%.</li></ul></div>
+<div class="grid">
+<div class="card wide"><h3>Monthly revenue &amp; orders</h3><div class="sub">Bars = net revenue (&pound;), line = orders. Dec 2011 is a partial month (data ends 9 Dec 2011).</div><div id="cTrend" class="chart"></div></div>
+<div class="card"><h3>New vs returning customer revenue</h3><div class="sub">Identified customers only. "New" = the customer's first purchase month.</div><div id="cNR" class="chart"></div></div>
+<div class="card"><h3>Average order value by month</h3><div class="sub">Net revenue / distinct invoices</div><div id="cAov" class="chart"></div></div>
+<div class="card"><h3>Top 10 countries by revenue</h3><div class="sub">Share of the filtered total shown in labels</div><div id="cCtry" class="chart h380"></div></div>
+<div class="card"><h3>Top 10 products by revenue</h3><div class="sub">Ranked within the current filter (from the top 400 SKUs overall)</div><div id="cProd" class="chart h380"></div></div>
+<div class="card wide"><h3>Monthly acquisition cohorts &mdash; customer retention</h3><div class="sub">% of each cohort (customers whose first purchase fell in that month) who purchased again N months after their first purchase (follows the Market filter; month filters do not apply). Blank = not yet observable. The Dec 2009 cohort includes pre-existing customers (left-censored).</div><div id="cCoh" class="chart h560"></div></div>
+</div></main>
+<footer><b>Source:</b> Chen, D. (2019). <i>Online Retail II</i> [Dataset]. UCI Machine Learning Repository, https://doi.org/10.24432/C5CG6D (CC BY 4.0). Transactions from 1 Dec 2009 to 9 Dec 2011, extracted 2026-10-10. Net revenue = quantity &times; unit price, excluding cancellations (invoices starting "C"), non-positive quantities or prices, exact-duplicate lines, and non-product codes (postage, fees, manual adjustments). Currency: GBP. Built by Clint Aguilar with Python, DuckDB SQL and Plotly.</footer>
+<script src="/assets/vendor/plotly.min.js"></script>
+<script src="app.js"></script>
+</body></html>

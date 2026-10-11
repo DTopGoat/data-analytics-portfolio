@@ -1,14 +1,12 @@
-# Clint Aguilar — Clinical Data Analytics Portfolio
+# Clint Aguilar: portfolio site
 
-Portfolio focused on clinical operations analytics, SQL, business intelligence, Snowflake, analytics engineering, and reporting automation.
+Static site, deployed by Netlify from `main` (`publish = "."`). No build step, no external hosts.
 
-## Featured projects
-1. Protocol Deviation Dashboard
-2. Patient Recruitment Analytics
-3. Study Mapping Application
-4. Report Distribution Automation
+- `index.html`: home page
+- `projects/*.html`: case studies (three on public data, four from day-job work shown with synthetic visuals only)
+- `dashboards/<name>/`: interactive Plotly dashboards on public data (ClinicalTrials.gov, UCI Online Retail II)
+- `assets/vendor/plotly.min.js`: plotly.js v4.1.1 (MIT), served locally. It has one small patch so d3 `attr("style")` goes through CSSOM; `plotly-rules.css` is the same-origin stylesheet Plotly writes its runtime rules into. Together these keep the strict CSP in `netlify.toml` (no inline scripts or styles) free of violations.
 
-## Technology stack
-Snowflake · SQL · Looker · Power BI · Python · Streamlit · Snowpark · dbt · Power Automate · Azure DevOps · Git
+Placeholders still to fill in: `[CONTACT_EMAIL]` (home page contact) and `[REPO_URL]` (clinical-trials-dbt case study, waiting until that repo is public).
 
-All public case studies use synthetic or anonymized visuals. Corporate data, patient information, internal identifiers, credentials, proprietary SQL, and confidential implementation details are excluded.
+Data rule: nothing here may contain patient data, client or employer data, internal identifiers, credentials or proprietary SQL. Day-job visuals are synthetic.

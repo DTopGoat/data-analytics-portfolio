@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinical trials analytics in dbt · Clint Aguilar</title>
+<meta name="description" content="A tested star schema for 4,288 completed cancer trials: staging, intermediate and mart layers, 48 data tests, CI on every push.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap top-inner">
+<a class="name" href="../index.html">Clint Aguilar</a>
+<nav aria-label="Main">
+<a href="../index.html#work">Work</a>
+<a href="../index.html#experience">Experience</a>
+<a href="../index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<article class="wrap case">
+<p class="back"><a href="../index.html#work">&larr; All work</a></p>
+<p class="kicker">Public data · dbt, DuckDB, SQL, GitHub Actions</p>
+<h1>Clinical trials analytics in dbt</h1>
+<p class="lede">A tested star schema for 4,288 completed cancer trials: staging, intermediate and mart layers, 48 data tests, CI on every push.</p>
+<p class="case-links"><a class="btn" href="#" data-placeholder="CLINICAL_TRIALS_DBT_REPO_URL">Code on GitHub [REPO_URL]</a> <span class="note">Repository link coming soon.</span></p>
+<figure class="hero-fig"><img src="../assets/img/work/clinical-trials-dbt.webp" alt="Clinical trials analytics in dbt, overview" width="1200" height="900" decoding="async"></figure>
+<div class="case-body">
+<div class="prose">
+<h2>The question</h2>
+<p>A research-operations team wants to benchmark completed oncology trials: size, duration, sponsors, locations and how reliably results get posted. The API returns nested JSON with partial dates, free-text conditions, duplicate site rows and inconsistent sponsor names, so analysts were re-cleaning the same data in spreadsheets for every question.</p>
+<h2>What I did</h2>
+<p>A small Python script pulls a reproducible slice from the API into raw CSVs. dbt on DuckDB models it as sources, staging, intermediate and marts, using the same conventions I use on Snowflake. The marts are a fact table of studies, dimensions for sponsors, conditions and sites, and bridge tables, exported to CSV and Parquet for BI tools.</p>
+<h2>Testing</h2>
+<p>15 models and 48 tests, all passing: unique and not-null keys, relationships from every fact and bridge to its dimensions, accepted values on status and phase, and singular tests. For example, a study’s completion date can never fall before its start, and site counts on the fact table must reconcile exactly with the site bridge. SQL is linted with sqlfluff and GitHub Actions runs the build on every push and pull request.</p>
+<h2>Cleaning rules</h2>
+<p>Month-only dates resolve to the first of the month. Combined phases normalize to Phase 1/2 and 2/3. Conditions are grouped case-insensitively. Duplicate site rows are dropped. When a sponsor appears with more than one class, the most frequent class wins.</p>
+<h2>What it shows</h2>
+<ul><li>4,288 completed cancer trials enrolled 784,777 participants. The median trial enrolled 53 people.</li><li>34.1% posted results. Industry sponsors post results about twice as often as academic centers (52.6% vs 26.0%).</li><li>Phase 3 trials have a median enrollment of 300 and a median duration of 58.4 months.</li><li>Breast cancer is the most common condition (330 studies).</li></ul>
+</div>
+<aside class="case-meta">
+<h2>Tools</h2><p>dbt, DuckDB, SQL, Python, sqlfluff, GitHub Actions</p>
+<h2>Data</h2><p>ClinicalTrials.gov, U.S. National Library of Medicine (public domain).</p>
+</aside>
+</div>
+<p class="next">Next: <a href="business-kpi.html">E-commerce sales and customer KPIs</a></p>
+</article>
+</main>
+<footer class="foot">
+<div class="wrap foot-inner">
+<p>Clint Aguilar &middot; Baguio City, Philippines &middot; working US hours, remote</p>
+<p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
+</div>
+</footer>
+</body>
+</html>

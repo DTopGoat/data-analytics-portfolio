@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clinical Trials Operations Dashboard — Type 2 Diabetes</title><meta name="description" content="Interactive dashboard built on public data by Clint Aguilar.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="dashboard.css">
+<meta name="plotly-maplibre-css" id="9f215cf04c5486422605d13261cb87401f4e7763b6296af81e98efbc0130da53" content="skipped: no map traces; avoids inline style injection under CSP">
+<link rel="stylesheet" id="plotly.js-style-global" href="/assets/vendor/plotly-rules.css">
+</head><body>
+<div class="backbar"><a href="/projects/clinical-trials-ops.html">&larr; Case study</a> &middot; <a href="/">Clint Aguilar</a></div>
+</head><body>
+<header><h1>Clinical Trials Operations Dashboard &mdash; Type 2 Diabetes</h1>
+<p>Interventional studies registered on ClinicalTrials.gov with a start date between 2015 and 2024 &middot; portfolio status, phase mix, sponsors, site footprint and cycle times</p></header>
+<div class="filters">
+<label>Phase<select id="fPhase"></select></label>
+<label>Sponsor type<select id="fClass"></select></label>
+<label>Status<select id="fStatus"></select></label>
+<label>Start year from<select id="fY0"></select></label>
+<label>Start year to<select id="fY1"></select></label>
+<button id="btnReset">Reset filters</button><span id="cnt" class="cnt"></span></div>
+<main>
+<div class="kpis" id="kpis"></div>
+<div class="insights"><b>Key findings (all studies, 2015&ndash;2024 starts)</b><ul>
+<li>4,477 interventional T2D studies planned or enrolled 1.79M participants across 115 countries; 63.1% are completed and 7.0% stopped (terminated, withdrawn or suspended).</li>
+<li>19.1% of records have status <i>Unknown</i> (past their expected completion with no update in 2+ years). That's a registry data-quality gap worth flagging to a study-start-up or data-governance team.</li>
+<li>Phase 3 studies take a median 21.5 months from start to actual completion and enrol a median 320 participants, versus 6.5 months and 34 participants for Phase 1.</li>
+<li>Industry runs about 30% of studies, led by Novo Nordisk (151) and Eli Lilly (109). The US has 35% of all site records, and China is the #2 country by number of studies.</li></ul></div>
+<div class="grid">
+<div class="card"><h3>Recruitment / overall status</h3><div class="sub">Number of studies by current overall status</div><div id="cStatus" class="chart"></div></div>
+<div class="card"><h3>Phase mix</h3><div class="sub">Studies by phase, with median planned/actual enrolment</div><div id="cPhase" class="chart"></div></div>
+<div class="card wide"><h3>Study starts per year</h3><div class="sub">Stacked by lead-sponsor type</div><div id="cYear" class="chart"></div></div>
+<div class="card"><h3>Top 10 lead sponsors</h3><div class="sub">By number of studies (industry in blue, academic/other in orange)</div><div id="cSpon" class="chart h380"></div></div>
+<div class="card"><h3>Sites by country &mdash; top 12</h3><div class="sub">Site records (bars) and distinct studies with a site in the country (labels)</div><div id="cCtry" class="chart h380"></div></div>
+<div class="card"><h3>Start-to-completion duration</h3><div class="sub">Completed studies with an actual completion date, in months. Box = IQR, line = median.</div><div id="cDur" class="chart"></div></div>
+<div class="card"><h3>Stopped-study rate by phase</h3><div class="sub">Terminated + withdrawn as a share of closed studies (completed + terminated + withdrawn)</div><div id="cTerm" class="chart"></div></div>
+</div></main>
+<footer><b>Source:</b> ClinicalTrials.gov API v2 (<code>/api/v2/studies</code>, query.cond = "Type 2 Diabetes", StudyType = Interventional, StartDate 2015-01-01 to 2024-12-31), extracted 2026-10-10. Site counts are location records listed per study. Durations use only COMPLETED studies with an ACTUAL completion date. Enrolment is the registered count (actual or anticipated). Built by Clint Aguilar with Python, DuckDB SQL and Plotly.</footer>
+<script src="/assets/vendor/plotly.min.js"></script>
+<script src="app.js"></script>
+</body></html>

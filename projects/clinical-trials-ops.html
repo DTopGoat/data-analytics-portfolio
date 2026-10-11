@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinical trials operations dashboard · Clint Aguilar</title>
+<meta name="description" content="Status, phase mix, sponsors, site footprint and cycle times for 4,477 Type 2 Diabetes trials registered on ClinicalTrials.gov (2015–2024 starts).">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body class="case-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap top-inner">
+<a class="name" href="../index.html">Clint Aguilar</a>
+<nav aria-label="Main">
+<a href="../index.html#work">Work</a>
+<a href="../index.html#experience">Experience</a>
+<a href="../index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<article class="wrap case">
+<p class="back"><a href="../index.html#work">&larr; All work</a></p>
+<p class="kicker">Public data · Python, DuckDB SQL, Plotly</p>
+<h1>Clinical trials operations dashboard</h1>
+<p class="lede">Status, phase mix, sponsors, site footprint and cycle times for 4,477 Type 2 Diabetes trials registered on ClinicalTrials.gov (2015–2024 starts).</p>
+<p class="case-links"><a class="btn" href="../dashboards/clinical-trials-ops/">Open the interactive dashboard</a> </p>
+<figure class="hero-fig"><img src="../assets/img/work/clinical-trials-ops.webp" alt="Clinical trials operations dashboard, overview" width="1200" height="900" decoding="async"></figure>
+<div class="case-body">
+<div class="prose">
+<h2>The question</h2>
+<p>A clinical operations team wants one view of the trial landscape: what is recruiting, which phases and sponsors dominate, where the sites are, and how long studies really take. The registry has the answers, but they are spread across thousands of nested JSON records.</p>
+<h2>What I did</h2>
+<p>I pulled 4,477 interventional Type 2 Diabetes studies and 39,857 site records from the public ClinicalTrials.gov v2 API with Python, modelled them in DuckDB SQL, and built a filterable dashboard in Plotly. Filters cover phase, sponsor type, status and start year.</p>
+<h2>What it shows</h2>
+<ul><li>63.1% of studies are completed and 7.0% stopped (terminated, withdrawn or suspended).</li><li>19.1% of records still say “Unknown status”: past their expected completion with no update in two years. That is a data-quality gap worth raising with a governance team.</li><li>Median start-to-completion is 21.5 months for Phase 3 and 6.5 months for Phase 1.</li><li>Novo Nordisk (151 studies) and Eli Lilly (109) lead sponsorship. The US holds 35% of site records across 115 countries.</li></ul>
+</div>
+<aside class="case-meta">
+<h2>Tools</h2><p>Python, DuckDB, SQL, Plotly</p>
+<h2>Data</h2><p>ClinicalTrials.gov API v2, U.S. National Library of Medicine (public domain).</p>
+</aside>
+</div>
+<p class="next">Next: <a href="clinical-trials-dbt.html">Clinical trials analytics in dbt</a></p>
+</article>
+</main>
+<footer class="foot">
+<div class="wrap foot-inner">
+<p>Clint Aguilar &middot; Baguio City, Philippines &middot; working US hours, remote</p>
+<p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
+</div>
+</footer>
+</body>
+</html>
