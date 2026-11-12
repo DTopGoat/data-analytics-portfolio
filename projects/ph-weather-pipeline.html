@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Philippine weather and air quality pipeline · Clint Aguilar</title>
-<meta name="description" content="An hourly data pipeline for six Philippine cities: Python ingestion, DuckDB, incremental dbt models, 39 data tests and a live weather app.">
+<meta name="description" content="An hourly data pipeline for six Philippine cities: Python ingestion, DuckDB, incremental dbt models with a lookback window, 39 data tests, GitHub Actions, and the Thy Weather app.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -22,30 +22,63 @@
 </header>
 <main id="main">
 <article class="wrap case">
-<p class="back"><a href="../index.html#work">&larr; All work</a></p>
-<p class="kicker">Live pipeline · Python, DuckDB, dbt, GitHub Actions, Plotly</p>
+<p class="back"><a href="../index.html#pipelines">&larr; Data Pipeline Projects</a></p>
+<p class="kicker">Data pipeline · Python, DuckDB, dbt, GitHub Actions</p>
 <h1>Philippine weather and air quality pipeline</h1>
-<p class="lede">A pipeline that runs every hour on its own: it pulls weather and air quality for six Philippine cities, models and tests the data in dbt, and publishes it to a live weather app.</p>
-<p class="case-links"><a class="btn" href="https://ph-weather-pipeline.netlify.app/" rel="noopener noreferrer">Open the live app</a> <a href="https://github.com/DTopGoat/ph-weather-pipeline" rel="noopener noreferrer">Code on GitHub</a></p>
-<figure class="hero-fig"><img src="../assets/img/work/ph-weather-pipeline.webp" alt="The weather app showing current conditions, air quality, heat index and a 7-day forecast for Quezon City" width="1200" height="900" decoding="async"></figure>
+<p class="lede">A pipeline that runs every hour on its own: it pulls weather and air quality for six Philippine cities, models and tests the data in dbt, and publishes it to Thy Weather, a public weather app.</p>
+<p class="case-links"><a class="btn" href="https://thy-weather.netlify.app/" rel="noopener noreferrer">Open Thy Weather</a> <a href="https://github.com/DTopGoat/ph-weather-pipeline" rel="noopener noreferrer">Code on GitHub</a></p>
+<div class="pipe-health" data-pipeline-health="https://dtopgoat.github.io/ph-weather-pipeline/data/pipeline_health.json" aria-live="polite">
+<p class="pipe-health-title"><span class="dot" aria-hidden="true"></span>Live pipeline status: <strong data-h="status">loading…</strong></p>
+<dl>
+<div><dt>Last run</dt><dd data-h="last">–</dd></div>
+<div><dt>Rows loaded</dt><dd data-h="rows">–</dd></div>
+<div><dt>Data tests</dt><dd data-h="tests">–</dd></div>
+<div><dt>Source freshness</dt><dd data-h="fresh">–</dd></div>
+<div><dt>Bronze / Silver / Gold rows</dt><dd data-h="layers">–</dd></div>
+</dl>
+<p class="note"><a data-h="run" href="https://github.com/DTopGoat/ph-weather-pipeline/actions" rel="noopener noreferrer" hidden>View this run on GitHub Actions</a></p>
+</div>
+<h2 class="pipe-sub">Architecture</h2>
+<ol class="flow" aria-label="Pipeline architecture">
+<li><strong>Open-Meteo APIs</strong><span>Hourly weather and air quality, 6 cities</span></li>
+<li><strong>Python ingest</strong><span>Retries with backoff, hourly</span></li>
+<li class="layer-bronze"><strong>Bronze</strong><span>Raw rows, append-only, DuckDB</span></li>
+<li class="layer-silver"><strong>Silver</strong><span>dbt incremental, latest record per city and hour</span></li>
+<li class="layer-gold"><strong>Gold</strong><span>Hourly fact, daily rollup, AQI and heat index bands</span></li>
+<li><strong>Tests</strong><span>39 dbt tests, freshness, reconciliation</span></li>
+<li><strong>Publish</strong><span>JSON on GitHub Pages, read by Thy Weather and this page</span></li>
+</ol>
+<figure class="hero-fig"><img src="../assets/img/work/ph-weather-pipeline.webp" alt="Thy Weather showing current conditions, air quality, heat index and a 7-day forecast for Quezon City" width="1200" height="900" decoding="async"><figcaption class="note">Thy Weather, the app the pipeline feeds. It shows weather only; everything about the pipeline lives on this page and in the repo.</figcaption></figure>
 <div class="case-body">
 <div class="prose">
 <h2>The question</h2>
-<p>My other public projects are one-time pulls. Real pipelines run unattended, get the same records again and again, and have to say when something breaks. I wanted a project that shows that: scheduled ingestion, incremental loading with deduplication, tests that gate publishing, and a visible health status, all on data that changes every hour.</p>
-<h2>What I built</h2>
-<p>A Python job calls the free Open-Meteo forecast and air-quality APIs for Baguio, Quezon City, Cebu, Iloilo, Cagayan de Oro and Davao, with retries and backoff. It appends the raw hourly rows to a <strong>Bronze</strong> table in DuckDB, tagged with a run id and load time. Nothing in Bronze is ever updated.</p>
-<p>dbt builds <strong>Silver</strong> and <strong>Gold</strong> on top. Each run re-sends the past day and the next seven, so the same city and hour arrives many times as forecasts change. The Silver models are incremental on a composite key (city and hour): they read only rows loaded since the last run minus a lookback window, rank them, and keep the latest record. It is the same latest-record-per-key pattern behind the fix for a dbt incremental key that was dropping ~97% of expected records at my day job. Gold adds an hourly fact, a daily rollup, a city dimension, US EPA AQI categories and PAGASA heat index bands.</p>
-<h2>Testing and monitoring</h2>
-<p>39 dbt tests run on every build: unique keys, not-null and relationship checks, accepted values and range checks on every measure. A reconciliation test confirms that every city-and-hour key in Bronze appears exactly once in Silver and that Gold matches Silver row for row. Source freshness warns after two hours without a load. The results are saved to a table and shown in the app's pipeline health panel, along with the last run time and rows loaded.</p>
-<h2>Orchestration and cost</h2>
-<p>GitHub Actions runs the whole chain at 17 minutes past every hour: ingest, dbt build, freshness, export to small JSON files, publish. If a run fails, it opens a GitHub issue and closes it again when a later run succeeds. Pull requests run pytest, sqlfluff and a full dbt build. The DuckDB file is kept between runs as a release asset rather than committed to git, and old raw loads are pruned, so the repository stays small. The app is hosted separately and only reads the published data, so the hourly job never redeploys it. It costs nothing to run.</p>
+<p>My other public projects are one-time pulls. Real pipelines run unattended, receive the same records again and again, and have to say when something breaks. I wanted a project that shows that: scheduled ingestion, incremental loading with deduplication, tests that gate publishing, and a visible health status, all on data that changes every hour.</p>
+<h2>Ingestion</h2>
+<p>A Python job calls the free Open-Meteo forecast and air-quality APIs for Baguio, Quezon City, Cebu, Iloilo, Cagayan de Oro and Davao. It retries network errors, rate limits and server errors with exponential backoff, and fetches every city before writing anything, so a failed call never leaves half a run behind.</p>
+<h2>Bronze, Silver, Gold</h2>
+<ul>
+<li><strong>Bronze</strong> is the raw layer in DuckDB: every hourly row exactly as the API returned it, tagged with a run id and load time. It is append-only. Raw loads older than 14 days are pruned because Silver already holds the deduplicated history.</li>
+<li><strong>Silver</strong> types and deduplicates the data, one row per city and hour, for weather and for air quality.</li>
+<li><strong>Gold</strong> is what the app reads: an hourly fact that joins weather to air quality with a heat index, PAGASA heat index bands and US EPA AQI categories; a daily rollup per Manila calendar day; and a city dimension.</li>
+</ul>
+<h2>Incremental models with a lookback window</h2>
+<p>Each run re-sends the past day and the next seven, so the same city and hour arrives many times as forecasts are revised. The Silver models are dbt incremental models on a composite key (city and hour) with delete+insert. Each run reads only Bronze rows loaded since the newest Silver load minus a 3-hour lookback, ranks them by load time, and keeps the latest record. The lookback means a late or re-run load is never skipped, and delete+insert on the key makes reprocessing safe to repeat. It is the same latest-record-per-key pattern behind the fix for a dbt incremental key that was dropping ~97% of expected records at my day job.</p>
+<h2>Tests and data quality</h2>
+<p>39 dbt tests run on every build: unique keys on Silver and Gold, not-null and relationship checks, accepted values for the AQI and heat categories, and range checks on every measure. Source freshness warns after two hours without a Bronze load and errors after six. A reconciliation test confirms that every city-and-hour key in Bronze appears exactly once in Silver and that Gold matches Silver row for row. Every result is saved to a data-quality table and published with the run status shown above.</p>
+<h2>Orchestration</h2>
+<p>One GitHub Actions workflow runs the chain at 17 minutes past every hour: restore the DuckDB file, ingest, dbt build, freshness, export Gold to small JSON files, save the DuckDB file, publish to GitHub Pages. Runs never overlap. If a run fails, the workflow opens a GitHub issue (or comments on the open one) and closes it when a later run succeeds; the app keeps serving the last good data in the meantime.</p>
+<h2>CI</h2>
+<p>Every pull request runs pytest unit tests for the ingest and export code, sqlfluff on all SQL, and a full dbt build run twice on freshly ingested data so the incremental path is tested too.</p>
+<h2>Storage and cost</h2>
+<p>The DuckDB file is kept between runs as a GitHub release asset rather than committed to git, so the hourly job makes no commits and the repository stays small. The app is a static site on Netlify that only reads the published JSON, so hourly runs never redeploy it. Total running cost is ₱0.</p>
 <h2>Next</h2>
 <p>A Snowflake edition of the same design, using streams, tasks and MERGE, and a forecast-versus-actual accuracy model.</p>
 </div>
 <aside class="case-meta">
-<h2>Tools</h2><p>Python, DuckDB, dbt, SQL, sqlfluff, pytest, GitHub Actions, Plotly</p>
+<h2>Tools</h2><p>Python, DuckDB, dbt, SQL, sqlfluff, pytest, GitHub Actions</p>
+<h2>Schedule</h2><p>Hourly, at :17</p>
 <h2>Data</h2><p>Open-Meteo.com weather and air-quality APIs (CC BY 4.0). Model data, not official PAGASA readings.</p>
-<h2>Refresh</h2><p>Hourly</p>
+<h2>Links</h2><p><a href="https://thy-weather.netlify.app/" rel="noopener noreferrer">Thy Weather</a><br><a href="https://github.com/DTopGoat/ph-weather-pipeline" rel="noopener noreferrer">Code on GitHub</a></p>
 </aside>
 </div>
 <p class="next">Next: <a href="clinical-trials-ops.html">Clinical trials operations dashboard</a></p>
@@ -57,5 +90,6 @@
 <p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
 </div>
 </footer>
+<script src="../assets/js/pipeline-health.js" defer></script>
 </body>
 </html>
