@@ -14,6 +14,7 @@
 <div class="wrap top-inner">
 <a class="name" href="index.html">Clint Aguilar</a>
 <nav aria-label="Main">
+<a href="index.html#pipelines">Data Pipeline Projects</a>
 <a href="index.html#work">Work</a>
 <a href="index.html#experience">Experience</a>
 <a href="index.html#contact">Contact</a>
@@ -38,19 +39,55 @@
 </div>
 </section>
 
-<section class="wrap block" id="work">
-<h2>Projects on public data</h2>
-<p class="section-note">Everything here runs on open datasets, so you can check the numbers.</p>
+<section class="wrap block" id="pipelines">
+<h2>Data Pipeline Projects</h2>
+<p class="section-note">Pipelines that run on their own: scheduled ingestion, tested transformations and a public app on top. The status below is read live from the pipeline’s latest run.</p>
 <ul class="work-list">
 <li class="work-item work-big">
 <a class="work-thumb" href="projects/ph-weather-pipeline.html" tabindex="-1" aria-hidden="true"><img src="assets/img/work/ph-weather-pipeline.webp" alt="" width="1200" height="900" loading="lazy" decoding="async"></a>
 <div class="work-text">
-<p class="kicker">Live pipeline · Python, DuckDB, dbt, GitHub Actions, Plotly</p>
+<p class="kicker">Live pipeline · Python, DuckDB, dbt, GitHub Actions</p>
 <h3><a href="projects/ph-weather-pipeline.html">Philippine weather and air quality pipeline</a></h3>
-<p>An hourly pipeline for six Philippine cities: Python ingestion into a Bronze layer, deduplicated incremental dbt models, 39 data tests and freshness checks, and a live weather app with a pipeline health panel.</p>
-<p><a href="https://ph-weather-pipeline.netlify.app/" rel="noopener noreferrer">Open the live app</a> &middot; <a href="https://github.com/DTopGoat/ph-weather-pipeline" rel="noopener noreferrer">Code on GitHub</a></p>
+<p>Every hour it pulls weather and air quality for six Philippine cities, deduplicates and models the data in dbt, runs 39 data tests, and publishes the results to <a href="https://thy-weather.netlify.app/" rel="noopener noreferrer">Thy Weather</a>, a public weather app.</p>
+<p class="pipe-links"><a class="btn" href="https://thy-weather.netlify.app/" rel="noopener noreferrer">Open Thy Weather</a> <a href="https://github.com/DTopGoat/ph-weather-pipeline" rel="noopener noreferrer">Code on GitHub</a> <a href="projects/ph-weather-pipeline.html">Full write-up</a></p>
 </div>
 </li>
+</ul>
+<div class="pipe-health" data-pipeline-health="https://dtopgoat.github.io/ph-weather-pipeline/data/pipeline_health.json" aria-live="polite">
+<p class="pipe-health-title"><span class="dot" aria-hidden="true"></span>Live pipeline status: <strong data-h="status">loading…</strong></p>
+<dl>
+<div><dt>Last run</dt><dd data-h="last">–</dd></div>
+<div><dt>Rows loaded</dt><dd data-h="rows">–</dd></div>
+<div><dt>Data tests</dt><dd data-h="tests">–</dd></div>
+<div><dt>Source freshness</dt><dd data-h="fresh">–</dd></div>
+<div><dt>Bronze / Silver / Gold rows</dt><dd data-h="layers">–</dd></div>
+</dl>
+<p class="note"><a data-h="run" href="https://github.com/DTopGoat/ph-weather-pipeline/actions" rel="noopener noreferrer" hidden>View this run on GitHub Actions</a></p>
+</div>
+<h3 class="pipe-sub">How it works</h3>
+<ol class="flow" aria-label="Pipeline architecture">
+<li><strong>Open-Meteo APIs</strong><span>Hourly weather and air quality, 6 cities</span></li>
+<li><strong>Python ingest</strong><span>Retries with backoff, hourly</span></li>
+<li class="layer-bronze"><strong>Bronze</strong><span>Raw rows, append-only, DuckDB</span></li>
+<li class="layer-silver"><strong>Silver</strong><span>dbt incremental, latest record per city and hour</span></li>
+<li class="layer-gold"><strong>Gold</strong><span>Hourly fact, daily rollup, AQI and heat index bands</span></li>
+<li><strong>Tests</strong><span>39 dbt tests, freshness, reconciliation</span></li>
+<li><strong>Publish</strong><span>JSON on GitHub Pages, read by Thy Weather and this page</span></li>
+</ol>
+<dl class="pipe-facts">
+<div><dt>Bronze, Silver, Gold</dt><dd>Bronze keeps every raw API row with its load time and is never updated. Silver types and deduplicates it. Gold holds the tables the app reads.</dd></div>
+<div><dt>Incremental with lookback</dt><dd>Each run re-sends the same hours as forecasts change. Silver reads only rows loaded since its last run minus a 3-hour lookback, then keeps the latest record per city and hour. It’s the same pattern I used to fix a dbt incremental key that was dropping ~97% of expected records at work.</dd></div>
+<div><dt>Tests and data quality</dt><dd>Unique keys, not-null, accepted values and range checks, source freshness, and a Bronze-to-Gold row-count reconciliation. Results are stored every run.</dd></div>
+<div><dt>Orchestration</dt><dd>GitHub Actions runs ingest, dbt build, freshness, export and publish at 17 minutes past every hour. A failed run opens a GitHub issue and closes it on recovery.</dd></div>
+<div><dt>CI</dt><dd>Every pull request runs pytest, sqlfluff and a full dbt build on fresh data.</dd></div>
+<div><dt>Cost</dt><dd>₱0 a month: free APIs, GitHub Actions and Pages on a public repo, and a static app on Netlify that hourly runs never redeploy.</dd></div>
+</dl>
+</section>
+
+<section class="wrap block" id="work">
+<h2>Projects on public data</h2>
+<p class="section-note">Everything here runs on open datasets, so you can check the numbers.</p>
+<ul class="work-list">
 <li class="work-item work-big">
 <a class="work-thumb" href="projects/clinical-trials-ops.html" tabindex="-1" aria-hidden="true"><img src="assets/img/work/clinical-trials-ops.webp" alt="" width="1200" height="900" loading="lazy" decoding="async"></a>
 <div class="work-text">
@@ -139,5 +176,6 @@
 <p>Work from my day job is shown with synthetic data only. No patient data, client data or internal code is published here.</p>
 </div>
 </footer>
+<script src="assets/js/pipeline-health.js" defer></script>
 </body>
 </html>
